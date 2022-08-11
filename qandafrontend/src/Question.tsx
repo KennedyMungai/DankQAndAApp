@@ -6,7 +6,7 @@ interface Props {
     showContent?: boolean;
 }
 
-const Question = ({ data, showContent }: Props) => {
+const Question = ({ data, showContent = true }: Props) => {
   return (
     <div>
         <div>
