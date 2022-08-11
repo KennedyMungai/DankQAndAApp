@@ -24,7 +24,12 @@ const HomePage = () => {
         <PageTitle>Unanswered Questions</PageTitle>
         <button>Ask A Question</button>
       </div>
-      <QuestionList data={questions} renderItem={(question) => <div>{question.title}</div>} />
+
+      {questionsLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <QuestionList data={questions} renderItem={(question) => <div>{question.title}</div>} />
+      )}
     </Page>
   )
 }
