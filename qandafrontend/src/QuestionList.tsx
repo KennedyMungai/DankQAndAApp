@@ -1,6 +1,6 @@
 import React from 'react'
+import Question from './Question';
 import { QuestionData } from './QuestionsData'
-import { Question } from './Question'
 
 interface Props {
     data: QuestionData[];
