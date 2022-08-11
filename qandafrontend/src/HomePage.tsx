@@ -18,8 +18,6 @@ const HomePage = () => {
     doGetUnansweredQuestions();
   }, []);
 
-  console.log('rendered');
-
   return (
     <Page>
       <div>
