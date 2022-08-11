@@ -1,6 +1,6 @@
 import React from 'react'
 import UserIcon from './Icon'
-import './Header.css'
+import styles from './Header.module.css'
 
 const Header = () => {
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -8,7 +8,7 @@ const Header = () => {
     };
 
     return (
-        <div className='container'>
+        <div className={styles.container}>
             <a href="./">Q & A</a>
             <input type="text" name="" id="" placeholder="Search..." onChange={handleSearchInputChange} />
             <a href="./signin">
