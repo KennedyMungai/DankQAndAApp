@@ -7,12 +7,14 @@ interface Props {
     renderItem?: (item: QuestionData) => JSX.Element;
 }
 
-const QuestionList = ({ data }: Props) => {
+const QuestionList = ({ data, renderItem }: Props) => {
   return (
     <ul>
         {data.map((question) => (
             <li key={question.questionId}>
-              <Question data={question}/>
+              {
+                renderItem ? renderItem(question) : <Question data={question} />
+              }
             </li>
         ))}
     </ul>
