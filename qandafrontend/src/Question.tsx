@@ -33,8 +33,4 @@ const Question = ({ data, showContent }: Props) => {
   )
 }
 
-Question.defaultProps = {
-    showContent: true,
-};
-
 export default Question
