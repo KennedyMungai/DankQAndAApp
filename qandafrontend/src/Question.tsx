@@ -5,9 +5,20 @@ interface Props {
     data: QuestionData;
 }
 
-const Question = () => {
+const Question = ({ data }: Props) => {
   return (
-    <div>Question</div>
+    <div>
+        <div>
+            {data.title}
+        </div>
+        <div>
+            {
+                `Asked by ${data.userName} on
+                ${data.created.toLocaleDateString()}
+                ${data.created.toLocaleTimeString()}`
+            }
+        </div>
+    </div>
   )
 }
 
