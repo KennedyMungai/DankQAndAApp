@@ -12,7 +12,7 @@ const HomePage = () => {
     const doGetUnansweredQuestions =async () => {
       const unansweredQuestions = await getUnansweredQuestions();
       setQuestions(unansweredQuestions);
-      // setQuestionsLoading(false);
+      setQuestionsLoading(false);
     };
 
     doGetUnansweredQuestions();
