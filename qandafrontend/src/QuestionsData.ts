@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 export interface QuestionData {
     questionId: number;
     title: string;
