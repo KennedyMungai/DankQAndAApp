@@ -18,6 +18,10 @@ const HomePage = () => {
     doGetUnansweredQuestions();
   }, []);
 
+  const handleAskQuestionClick = () => {
+    console.log('TODO - Move to the ask page');
+  };
+
   return (
     <Page>
       <div>
