@@ -4,6 +4,7 @@ import { QuestionData } from './QuestionsData'
 
 interface Props {
     data: QuestionData[];
+    renderItem?: (item: QuestionData) => JSX.Element;
 }
 
 const QuestionList = ({ data }: Props) => {
