@@ -14,9 +14,12 @@ const Question = ({ data, showContent }: Props) => {
         </div>
         <div>
             {
-                data.content.length > 50
-                ? `${data.content.substring(0, 50)}...`
-                : data.content
+                showContent &&
+                (
+                    data.content.length > 50
+                    ? `${data.content.substring(0, 50)}...`
+                    : data.content
+                )
             }
         </div>
         <div>
