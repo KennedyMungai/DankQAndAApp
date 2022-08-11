@@ -3,7 +3,7 @@ import user from './user..svg'
 
 const UserIcon = () => {
   return (
-    <div>UserIcon</div>
+    <img src={user} alt="User" width="12px" />
   )
 }
 
