@@ -1,5 +1,5 @@
 import React from 'react'
-import user from './user..svg'
+import user from './user.svg'
 
 const UserIcon = () => {
   return (
