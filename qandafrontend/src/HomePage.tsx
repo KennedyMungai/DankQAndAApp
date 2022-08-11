@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Page from './Page'
 import PageTitle from './PageTitle'
 import QuestionList from './QuestionList'
 import { getUnansweredQuestions, QuestionData } from './QuestionsData'
 
 const HomePage = () => {
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
+
   useEffect(() => {
     console.log('first rendered')
   }, []);
