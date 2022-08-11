@@ -4,6 +4,7 @@ export interface QuestionData {
     content: string;
     username: string;
     create: Date;
+    answers: AnswerData[];
 }
 
 export interface AnswerData {
