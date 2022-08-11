@@ -55,6 +55,7 @@ const questions: QuestionData[] = [
     return new Promise(resolve => setTimeout(resolve, ms));
   };
 
-  export const getUnansweredQuestions = (): QuestionData[] => {
+  export const getUnansweredQuestions = async (): Promise<QuestionData[]> => {
+    await wait(500);
     return questions.filter(q => q.answers.length === 0);
   };
