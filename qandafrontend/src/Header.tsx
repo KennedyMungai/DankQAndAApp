@@ -1,4 +1,5 @@
 import React from 'react'
+import UserIcon from './Icon'
 
 const Header = () => {
     return (
