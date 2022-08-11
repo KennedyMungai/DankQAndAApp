@@ -49,6 +49,6 @@ const questions: QuestionData[] = [
     },
   ];
 
-  export const getAnsweredQuestions = (): QuestionData[] => {
+  export const getUnansweredQuestions = (): QuestionData[] => {
     return questions.filter(q => q.answers.length === 0);
   };
