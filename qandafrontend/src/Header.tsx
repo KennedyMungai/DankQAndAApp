@@ -2,6 +2,10 @@ import React from 'react'
 import UserIcon from './Icon'
 
 const Header = () => {
+    const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.currentTarget.value);
+    };
+
     return (
         <>
             <a href="./">Q & A</a>
