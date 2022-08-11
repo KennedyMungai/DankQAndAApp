@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Page from './Page'
 import PageTitle from './PageTitle'
 import QuestionList from './QuestionList'
 import { getUnansweredQuestions } from './QuestionsData'
 
 const HomePage = () => {
+  useEffect(() => {
+    console.log('first rendered')
+  }, []);
+
   return (
     <Page>
       <div>
