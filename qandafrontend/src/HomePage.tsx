@@ -22,7 +22,7 @@ const HomePage = () => {
     <Page>
       <div>
         <PageTitle>Unanswered Questions</PageTitle>
-        <button>Ask A Question</button>
+        <button onClick={handleAskQuestionClick} >Ask A Question</button>
       </div>
 
       {questionsLoading ? (
