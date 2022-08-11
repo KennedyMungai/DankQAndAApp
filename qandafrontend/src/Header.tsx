@@ -8,14 +8,14 @@ const Header = () => {
     };
 
     return (
-        <>
+        <div className='container'>
             <a href="./">Q & A</a>
             <input type="text" name="" id="" placeholder="Search..." onChange={handleSearchInputChange} />
             <a href="./signin">
                 <UserIcon />
                 <span>Sign In</span>
             </a>
-        </>
+        </div>
     )
 }
 
