@@ -3,7 +3,7 @@ import { QuestionData } from './QuestionsData'
 
 interface Props {
     data: QuestionData;
-    showContent: boolean;
+    showContent?: boolean;
 }
 
 const Question = ({ data, showContent }: Props) => {
