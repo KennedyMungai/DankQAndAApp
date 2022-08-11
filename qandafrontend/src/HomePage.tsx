@@ -1,16 +1,18 @@
 import React from 'react'
+import Page from './Page'
+import PageTitle from './PageTitle'
 import QuestionList from './QuestionList'
 import { getUnansweredQuestions } from './QuestionsData'
 
 const HomePage = () => {
   return (
-    <div>
-        <div>
-            <h2>Unanswered Questions</h2>
-            <button>Ask a question</button>
-            <QuestionList data={getUnansweredQuestions()} />
-        </div>
-    </div>
+    <Page>
+      <div>
+        <PageTitle>Unanswered Questions</PageTitle>
+        <button>Ask A Question</button>
+      </div>
+      <QuestionList data={getUnansweredQuestions()} />
+    </Page>
   )
 }
 
