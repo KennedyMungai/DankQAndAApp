@@ -5,3 +5,10 @@ export interface QuestionData {
     username: string;
     create: Date;
 }
+
+export interface AnswerData {
+    answerId: number;
+    content: string;
+    username: string;
+    created: Date;
+}
