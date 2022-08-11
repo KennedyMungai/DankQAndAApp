@@ -6,6 +6,7 @@ import { getUnansweredQuestions, QuestionData } from './QuestionsData'
 
 const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
+  const [questionsLoading, setQuestionsLoading] = useState(true);
 
   useEffect(() => {
     console.log('first rendered')
