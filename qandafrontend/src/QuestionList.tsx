@@ -5,10 +5,10 @@ interface Props {
     data: QuestionData[];
 }
 
-const QuestionList = (props: Props) => {
+const QuestionList = ({ data }: Props) => {
   return (
     <ul>
-        {props.data.map((question) => (
+        {data.map((question) => (
             <li key={question.questionId}></li>
         ))}
     </ul>
