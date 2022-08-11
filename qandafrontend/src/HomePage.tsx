@@ -2,7 +2,12 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+        <div>
+            <h2>Unanswered Questions</h2>
+            <button>Ask a question</button>
+        </div>
+    </div>
   )
 }
 
