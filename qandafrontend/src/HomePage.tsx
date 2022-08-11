@@ -9,7 +9,11 @@ const HomePage = () => {
   const [questionsLoading, setQuestionsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('first rendered')
+    const doGetUnansweredQuestions =async () => {
+      const unansweredQuestions = await getUnansweredQuestions();
+    };
+
+    doGetUnansweredQuestions();
   }, []);
 
   return (
