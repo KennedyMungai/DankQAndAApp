@@ -5,7 +5,7 @@ interface Props {
     data: QuestionData[];
 }
 
-const QuestionList = () => {
+const QuestionList = (props: Props) => {
   return (
     <div>QuestionList</div>
   )
