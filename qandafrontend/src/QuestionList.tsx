@@ -7,7 +7,11 @@ interface Props {
 
 const QuestionList = (props: Props) => {
   return (
-    <div>QuestionList</div>
+    <ul>
+        {props.data.map((question) => (
+            <li key={question.questionId}></li>
+        ))}
+    </ul>
   )
 }
 
