@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <>
             <a href="./">Q & A</a>
-            <input type="text" name="" id="" placeholder="Search..." />
+            <input type="text" name="" id="" placeholder="Search..." onChange={handleSearchInputChange} />
             <a href="./signin">
                 <UserIcon />
                 <span>Sign In</span>
