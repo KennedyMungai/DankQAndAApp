@@ -8,15 +8,17 @@ const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [questionsLoading, setQuestionsLoading] = useState(true);
 
-  useEffect(() => {
-    const doGetUnansweredQuestions =async () => {
-      const unansweredQuestions = await getUnansweredQuestions();
-      setQuestions(unansweredQuestions);
-      setQuestionsLoading(false);
-    };
+  // useEffect(() => {
+  //   const doGetUnansweredQuestions =async () => {
+  //     const unansweredQuestions = await getUnansweredQuestions();
+  //     setQuestions(unansweredQuestions);
+  //     setQuestionsLoading(false);
+  //   };
 
-    doGetUnansweredQuestions();
-  }, []);
+  //   doGetUnansweredQuestions();
+  // }, []);
+
+  console.log('rendered');
 
   return (
     <Page>
