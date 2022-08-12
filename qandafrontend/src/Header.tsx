@@ -69,6 +69,10 @@ const Header = () => {
                         :focus {
                             outline-color: ${gray5};
                         }
+
+                        span {
+                            margin-left: 7px;
+                        }
                     `
                 }
                 >
