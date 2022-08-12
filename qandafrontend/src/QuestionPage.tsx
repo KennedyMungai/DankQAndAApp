@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+
+import { css } from '@emotion/react'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Page } from './Page'
