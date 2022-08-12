@@ -1,6 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-
 import React, { useEffect, useState } from 'react'
 import Page from './Page'
 import PageTitle from './PageTitle'
