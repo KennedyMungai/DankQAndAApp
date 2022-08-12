@@ -46,7 +46,6 @@ const Header = () => {
                     id="" 
                     defaultValue={criteria}
                     placeholder="Search..." 
-                    onChange={handleSearchInputChange} 
                     css={css`
                         box-sizing: border-box;
                         font-family: ${fontFamily};
