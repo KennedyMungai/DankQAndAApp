@@ -11,16 +11,18 @@ import { fontFamily, fontSize, gray2 } from './Styles'
 
 function App() {
   return (
-    <div css={
-      css`
-        font-family: ${fontFamily};
-        font-size: ${fontSize};
-        color: ${gray2};
-      `
-    }>
-      <Header />
-      <HomePage />
-    </div>
+    <BrowserRouter>
+      <div css={
+        css`
+          font-family: ${fontFamily};
+          font-size: ${fontSize};
+          color: ${gray2};
+        `
+      }>
+        <Header />
+        <HomePage />
+      </div>
+    </BrowserRouter>
   );
 }
 
