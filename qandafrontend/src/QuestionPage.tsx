@@ -20,7 +20,6 @@ const QuestionPage = () => {
         doGetQuestion(Number(questionId));
       }
     }, [questionId])
-    
 
   return (
     <Page>Question Page {questionId}</Page>
