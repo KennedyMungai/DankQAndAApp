@@ -5,6 +5,7 @@ import AskPage from './AskPage';
 
 import Header from './Header';
 import HomePage from './HomePage';
+import NotFoundPage from './NotFoundPage';
 import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
 import { fontFamily, fontSize, gray2 } from './Styles'
