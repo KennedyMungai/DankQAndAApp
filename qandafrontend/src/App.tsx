@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AskPage from './AskPage';
 
 import Header from './Header';
 import HomePage from './HomePage';
+import SearchPage from './SearchPage';
+import SignInPage from './SignInPage';
 import { fontFamily, fontSize, gray2 } from './Styles'
 
 function App() {
