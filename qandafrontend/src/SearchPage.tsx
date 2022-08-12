@@ -10,7 +10,7 @@ const SearchPage = () => {
   const [searchParams] = useSearchParams();
 
   return (
-    <Page>Question Page</Page>
+    <Page title='Search Results'>{null}</Page>
   )
 }
 
