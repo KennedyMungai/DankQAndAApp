@@ -51,3 +51,7 @@ export const FieldSet = styled.fieldset`
     border: 1px solid ${gray5};
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0,16);
 `;
+
+export const FieldContainer = styled.div`
+    margin-bottom: 10px;
+`;
