@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import { fontFamily, fontSize, gray1, gray2, gray3 } from './Styles'
+
 import React from 'react'
 import UserIcon from './Icon'
 
