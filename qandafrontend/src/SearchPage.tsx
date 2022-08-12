@@ -23,7 +23,19 @@ const SearchPage = () => {
   
 
   return (
-    <Page title='Search Results'>{null}</Page>
+    <Page title='Search Results'>
+      {
+        search && (
+          <p css={css`
+            font-size: 16px;
+            font-style: italic;
+            margin-top: 0px;
+          `}>
+            for "search"
+          </p>
+        )
+      }
+    </Page>
   )
 }
 
