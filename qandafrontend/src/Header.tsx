@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { fontFamily, fontSize, gray1, gray2, gray5 } from './Styles'
-import React from 'react'
+import React, { useState } from 'react'
 import UserIcon from './Icon'
 import { Link, useSearchParams } from 'react-router-dom'
 
 const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
+    const [search, setSearch] = useState(criteria);
 
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.currentTarget.value);
