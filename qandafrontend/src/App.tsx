@@ -25,6 +25,7 @@ function App() {
           <Route path="search" element={<SearchPage/>} />
           <Route path="ask" element={<AskPage/>} />
           <Route path="signin" element={<SignInPage/>} />
+          <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       </div>
     </BrowserRouter>
