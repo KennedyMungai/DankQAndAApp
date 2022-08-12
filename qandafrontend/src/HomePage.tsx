@@ -14,18 +14,18 @@ const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [questionsLoading, setQuestionsLoading] = useState(true);
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const doGetUnansweredQuestions =async () => {
       const unansweredQuestions = await getUnansweredQuestions();
       setQuestions(unansweredQuestions);
       setQuestionsLoading(false);
     };
-
+    
     doGetUnansweredQuestions();
   }, []);
 
+  const navigate = useNavigate();
+  
   const handleAskQuestionClick = () => {
     console.log('TODO - Move to the ask page');
   };
