@@ -11,6 +11,8 @@ import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
 import { fontFamily, fontSize, gray2 } from './Styles'
 
+const AskPage = React.lazy(() => import('./AskPage'));
+
 function App() {
   return (
     <BrowserRouter>
