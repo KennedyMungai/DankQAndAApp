@@ -9,9 +9,9 @@ function App() {
   return (
     <div css={
       css`
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 16px;
-        color: #5c5a5a;
+        font-family: ${fontFamily};
+        font-size: ${fontSize};
+        color: ${gray2};
       `
     }>
       <Header />
