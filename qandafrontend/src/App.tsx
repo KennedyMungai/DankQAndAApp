@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AskPage from './AskPage';
+// import AskPage from './AskPage';
 import Header from './Header';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
