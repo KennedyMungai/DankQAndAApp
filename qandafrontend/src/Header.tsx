@@ -6,6 +6,8 @@ import UserIcon from './Icon'
 import { Link, useSearchParams } from 'react-router-dom'
 
 const Header = () => {
+    const [searchParams] = useSearchParams();
+
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.currentTarget.value);
     };
