@@ -6,7 +6,7 @@ const QuestionPage = () => {
     const { questionId } = useParams();
 
   return (
-    <Page>Question Page</Page>
+    <Page>Question Page {questionId}</Page>
   )
 }
 
