@@ -24,7 +24,12 @@ const Header = () => {
             box-shadow: 0 3px 7px 0 rgba(110, 112, 114, 0.21);
             `
         }>
-            <a href="./">Q & A</a>
+            <a href="./" css={css`
+                font-size: 24px;
+                font-weight: bold;
+                color: ${gray1};
+                text-decoration: none;
+            `}>Q & A</a>
             <input type="text" name="" id="" placeholder="Search..." onChange={handleSearchInputChange} />
             <a href="./signin">
                 <UserIcon />
