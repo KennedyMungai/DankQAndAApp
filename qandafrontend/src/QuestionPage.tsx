@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AnswerList from './AnswerList'
 import { Page } from './Page'
 import { getQuestion, QuestionData } from './QuestionsData'
 import { gray3, gray6 } from './Styles'
