@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import AskPage from './AskPage';
 import Header from './Header';
@@ -27,7 +27,22 @@ function App() {
         <Routes>
           <Route path="" element={<HomePage/>} />
           <Route path="search" element={<SearchPage/>} />
-          <Route path="ask" element={<AskPage/>} />
+
+          <Route path="ask" element={
+            <Suspense fallback={
+              <div css={
+                css`
+                  margin-top: 100px;
+                  text-align: center;
+                `
+              }>
+                Loading...
+              </div>
+            }>
+              <AskPage />
+            </Suspense>
+          } />
+
           <Route path="signin" element={<SignInPage/>} />
           <Route path="*" element={<NotFoundPage/>} />
           <Route path="questions/:questionId" element={<QuestionPage />} />
