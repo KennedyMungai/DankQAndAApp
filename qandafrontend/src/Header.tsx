@@ -41,8 +41,8 @@ const Header = () => {
 
             <form onSubmit={handleSubmit}>
                 <input 
+                    name="search"
                     type="text" 
-                    name="" 
                     id="" 
                     value={search}
                     placeholder="Search..." 
