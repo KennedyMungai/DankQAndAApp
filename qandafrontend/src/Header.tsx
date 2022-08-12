@@ -46,6 +46,7 @@ const Header = () => {
 
             <form onSubmit={handleSubmit}>
                 <input 
+                    ref={register}
                     name="search"
                     type="text" 
                     id="" 
