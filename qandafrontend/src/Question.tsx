@@ -11,7 +11,13 @@ interface Props {
 
 const Question = ({ data, showContent = true }: Props) => {
   return (
-    <div>
+    <div
+        css={
+            css`
+                padding: 10px 0px;
+            `
+        }
+    >
         <div>
             {data.title}
         </div>
