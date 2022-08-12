@@ -8,7 +8,9 @@ import { searchQuestions, QuestionData } from './QuestionsData'
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
-  const [questions, setQuestions] = useState<QuestionData[]>([])
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
+
+  const search = searchParams.get('criteria') || "";
 
   return (
     <Page title='Search Results'>{null}</Page>
