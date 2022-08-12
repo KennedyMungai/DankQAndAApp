@@ -85,3 +85,8 @@ export const FieldTextArea = styled.textarea`
     ${baseFieldCSS}
     height: 100px;
 `;
+
+export const FieldError = styled.div`
+    font-size: 12px;
+    color: red;
+`;
