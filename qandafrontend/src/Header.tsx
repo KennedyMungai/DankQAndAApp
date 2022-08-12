@@ -25,12 +25,12 @@ const Header = () => {
             box-shadow: 0 3px 7px 0 rgba(110, 112, 114, 0.21);
             `
         }>
-            <a href="./" css={css`
+            <Link to="/" css={css`
                 font-size: 24px;
                 font-weight: bold;
                 color: ${gray1};
                 text-decoration: none;
-            `}>Q & A</a>
+            `}>Q & A</Link>
 
             <input 
                 type="text" 
