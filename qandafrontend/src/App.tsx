@@ -1,8 +1,8 @@
-import Header from './Header';
-import HomePage from './HomePage';
-
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+
+import Header from './Header';
+import HomePage from './HomePage';
 
 function App() {
   return (
