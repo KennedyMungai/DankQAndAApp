@@ -44,7 +44,6 @@ const Header = () => {
                     name="search"
                     type="text" 
                     id="" 
-                    value={search}
                     placeholder="Search..." 
                     onChange={handleSearchInputChange} 
                     css={css`
