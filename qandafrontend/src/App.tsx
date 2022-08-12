@@ -20,7 +20,12 @@ function App() {
         `
       }>
         <Header />
-        <HomePage />
+        <Routes>
+          <Route path="" element={<HomePage/>} />
+          <Route path="search" element={<SearchPage/>} />
+          <Route path="ask" element={<AskPage/>} />
+          <Route path="signin" element={<SignInPage/>} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
