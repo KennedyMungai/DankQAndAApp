@@ -101,3 +101,8 @@ export const SubmissionSuccess = styled.div`
     margin-top: 10px;
     color: green;
 `;
+
+export const SubmissionFailure = styled.div`
+    margin-top: 10px;
+    color: red;
+`;
