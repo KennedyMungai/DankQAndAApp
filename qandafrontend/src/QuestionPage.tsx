@@ -66,6 +66,7 @@ const QuestionPage = () => {
                             ${question.created.toLocaleTimeString()}`
                         }
                     </div>
+                    <AnswerList data={question.answers} />
                 </>
             )}
         </div>
