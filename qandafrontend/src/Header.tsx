@@ -47,6 +47,10 @@ const Header = () => {
                     background-color: white ;
                     width: 200px ;
                     height: 30px;
+
+                    :focus {
+                        outline-color: ${gray5};
+                    }
                 `}
                 />
 
