@@ -7,6 +7,8 @@ import QuestionList from './QuestionList'
 import { searchQuestions, QuestionData } from './QuestionsData'
 
 const SearchPage = () => {
+  const [searchParams] = useSearchParams();
+
   return (
     <Page>Question Page</Page>
   )
