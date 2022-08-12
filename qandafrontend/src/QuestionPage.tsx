@@ -40,7 +40,7 @@ const QuestionPage = () => {
                     margin: 10px 0px 5px;
                 `
             }>
-                {question == null ? '' : question.title}
+                {question === null ? '' : question.title}
             </div>
         </div>
     </Page>
