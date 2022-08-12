@@ -49,7 +49,6 @@ const Header = () => {
                     ref={register}
                     name="search"
                     type="text" 
-                    id="" 
                     defaultValue={criteria}
                     placeholder="Search..." 
                     css={css`
