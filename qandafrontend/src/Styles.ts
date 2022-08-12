@@ -55,3 +55,7 @@ export const FieldSet = styled.fieldset`
 export const FieldContainer = styled.div`
     margin-bottom: 10px;
 `;
+
+export const FieldLabel = styled.label`
+    font-weight: bold;
+`;
