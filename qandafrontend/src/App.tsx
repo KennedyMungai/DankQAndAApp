@@ -6,7 +6,13 @@ import HomePage from './HomePage';
 
 function App() {
   return (
-    <div className={styles.container}>
+    <div css={
+      css`
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        color: #5c5a5a;
+      `
+    }>
       <Header />
       <HomePage />
     </div>
