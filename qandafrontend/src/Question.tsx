@@ -46,7 +46,15 @@ const Question = ({ data, showContent = true }: Props) => {
                 )
             }
         </div>
-        <div>
+        <div
+            css={
+                css`
+                    font-size: 12px;
+                    font-style: italic;
+                    color: ${gray3};
+                `
+            }
+        >
             {
                 `Asked by ${data.userName} on
                 ${data.created.toLocaleDateString()}
