@@ -8,10 +8,10 @@ import { Link, useSearchParams } from 'react-router-dom'
 const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
-    const [search, setSearch] = useState(criteria);
+    const [search, searchState] = useState(criteria);
 
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.value);
+        searchState(e.currentTarget.value);
     };
 
     return (
