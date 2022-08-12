@@ -80,3 +80,8 @@ const baseFieldCSS = css`
         background-color: ${gray6};
     }
 `;
+
+export const FieldTextArea = styled.textarea`
+    ${baseFieldCSS}
+    height: 100px;
+`;
