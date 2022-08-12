@@ -39,7 +39,7 @@ const HomePage = () => {
         }
       >
         <PageTitle>Unanswered Questions</PageTitle>
-        <button onClick={handleAskQuestionClick} >Ask A Question</button>
+        <PrimaryButton onClick={handleAskQuestionClick} >Ask A Question</PrimaryButton>
       </div>
 
       {questionsLoading ? (
