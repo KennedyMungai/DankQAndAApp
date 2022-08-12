@@ -27,18 +27,15 @@ const Question = ({ data, showContent = true }: Props) => {
                 `
             }
         >
-            <Link css={
-                css`
-                    text-decoration: none;
-                    color: ${gray2};
-                `
-            }
-                to={
-                    `questions/${data.questionId}`
-                }
-            >
-            {data.title}
-            </Link>
+              <Link
+                  css={css`
+                        text-decoration: none;
+                        color: ${gray2};
+                    `}
+                  to={`/questions/${data.questionId}`}
+              >
+                  {data.title}
+              </Link>
         </div>
         <div
             css={
