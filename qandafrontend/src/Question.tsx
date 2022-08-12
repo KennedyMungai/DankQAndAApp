@@ -18,7 +18,14 @@ const Question = ({ data, showContent = true }: Props) => {
             `
         }
     >
-        <div>
+        <div
+            css={
+                css`
+                    padding: 10px 0px;
+                    font-size: 19px;
+                `
+            }
+        >
             {data.title}
         </div>
         <div>
