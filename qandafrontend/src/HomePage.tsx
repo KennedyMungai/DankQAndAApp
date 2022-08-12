@@ -27,7 +27,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   
   const handleAskQuestionClick = () => {
-    console.log('TODO - Move to the ask page');
+    navigate('ask');
   };
 
   return (
