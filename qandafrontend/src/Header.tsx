@@ -9,9 +9,9 @@ const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
 
-    const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        searchState(e.currentTarget.value);
-    };
+    // const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     searchState(e.currentTarget.value);
+    // };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
