@@ -96,3 +96,8 @@ export const FormButtonContainer = styled.div`
     padding: 20px 0px 0px 0px;
     border-top: 1px solid ${gray5};
 `;
+
+export const SubmissionSuccess = styled.div`
+    margin-top: 10px;
+    color: green;
+`;
