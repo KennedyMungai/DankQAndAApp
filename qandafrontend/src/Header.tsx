@@ -30,7 +30,26 @@ const Header = () => {
                 color: ${gray1};
                 text-decoration: none;
             `}>Q & A</a>
-            <input type="text" name="" id="" placeholder="Search..." onChange={handleSearchInputChange} />
+
+            <input 
+                type="text" 
+                name="" 
+                id="" 
+                placeholder="Search..." 
+                onChange={handleSearchInputChange} 
+                css={css`
+                    box-sizing: border-box;
+                    font-family: ${fontFamily};
+                    font-size: ${fontSize};
+                    padding: 8px 10px;
+                    border-radius: 3px;
+                    color: ${gray2};
+                    background-color: white ;
+                    width: 200px ;
+                    height: 30px;
+                `}
+                />
+
             <a href="./signin">
                 <UserIcon />
                 <span>Sign In</span>
