@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Page } from './Page'
 import { getQuestion, QuestionData } from './QuestionsData'
-import { gray6 } from './Styles'
+import { gray3, gray6 } from './Styles'
 
 const QuestionPage = () => {
     const [question, setQuestion] = useState<QuestionData | null>(null)
@@ -51,6 +51,20 @@ const QuestionPage = () => {
                     }>
                         {question.content}
                     </p>
+
+                    <div css={
+                        css`
+                            font-size: 12px;
+                            font-style: italic;
+                            color: ${gray3};
+                        `
+                    }>
+                        {
+                            `Asked by ${question.userName} on 
+                            ${question.created.toLocaleDateString()} 
+                            ${question.created.toLocaleTimeString()}`
+                        }
+                    </div>
                 </>
             )}
         </div>
