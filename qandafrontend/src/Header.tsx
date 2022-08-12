@@ -54,7 +54,24 @@ const Header = () => {
                 `}
                 />
 
-            <a href="./signin">
+            <a 
+                href="./signin"
+                css={
+                    css`
+                        font-family: ${fontFamily};
+                        font-size: ${fontSize};
+                        padding: 5px 10px;
+                        background-color: transparent ;
+                        color: ${gray2};
+                        text-decoration: none;
+                        cursor: pointer;
+
+                        :focus {
+                            outline-color: ${gray5};
+                        }
+                    `
+                }
+                >
                 <UserIcon />
                 <span>Sign In</span>
             </a>
