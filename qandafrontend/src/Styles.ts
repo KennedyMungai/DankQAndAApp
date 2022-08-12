@@ -59,3 +59,24 @@ export const FieldContainer = styled.div`
 export const FieldLabel = styled.label`
     font-weight: bold;
 `;
+
+const baseFieldCSS = css`
+    box-sizing: border-box;
+    font-family: ${fontFamily};
+    font-size: ${fontSize};
+    margin-bottom: 5px;
+    padding: 8px 10px;
+    border: 1px solid ${gray5};
+    border-radius: 3px;
+    color: ${gray2};
+    background-color: white;
+    width: 100%;
+
+    :focus {
+        outline-color: ${gray5};
+    }
+
+    :disabled {
+        background-color: ${gray6};
+    }
+`;
