@@ -55,8 +55,8 @@ const Header = () => {
                 `}
                 />
 
-            <a 
-                href="./signin"
+            <Link 
+                to="signin"
                 css={
                     css`
                         font-family: ${fontFamily};
@@ -79,7 +79,7 @@ const Header = () => {
                 >
                 <UserIcon />
                 <span>Sign In</span>
-            </a>
+            </Link>
         </div>
     )
 }
