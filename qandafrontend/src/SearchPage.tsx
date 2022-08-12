@@ -35,6 +35,8 @@ const SearchPage = () => {
           </p>
         )
       }
+
+      <QuestionList data={questions} />
     </Page>
   )
 }
