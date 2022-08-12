@@ -27,7 +27,15 @@ const HomePage = () => {
 
   return (
     <Page>
-      <div>
+      <div
+        css={
+          css`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          `
+        }
+      >
         <PageTitle>Unanswered Questions</PageTitle>
         <button onClick={handleAskQuestionClick} >Ask A Question</button>
       </div>
