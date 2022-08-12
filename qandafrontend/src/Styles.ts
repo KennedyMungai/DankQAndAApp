@@ -90,3 +90,9 @@ export const FieldError = styled.div`
     font-size: 12px;
     color: red;
 `;
+
+export const FormButtonContainer = styled.div`
+    margin: 30px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
+    border-top: 1px solid ${gray5};
+`;
