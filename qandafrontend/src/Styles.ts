@@ -41,3 +41,13 @@ export const PrimaryButton = styled.button `
         cursor: not-allowed;
     }
 `;
+
+export const FieldSet = styled.fieldset`
+    margin: 10px auto 0px auto;
+    padding: 30px;
+    width: 350px;
+    background-color: ${gray6};
+    border-radius: 4px;
+    border: 1px solid ${gray5};
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0,16);
+`;
