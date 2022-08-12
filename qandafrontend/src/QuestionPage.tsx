@@ -42,6 +42,18 @@ const QuestionPage = () => {
             }>
                 {question === null ? '' : question.title}
             </div>
+            {question !== null && (
+                <>
+                    <p css={
+                        css`
+                            margin-top: 0px;
+                            background-color: white;
+                        `
+                    }>
+                        {question.content}
+                    </p>
+                </>
+            )}
         </div>
     </Page>
   )
