@@ -1,6 +1,5 @@
 import React from 'react'
 import UserIcon from './Icon'
-import styles from './Header.module.css'
 
 const Header = () => {
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
