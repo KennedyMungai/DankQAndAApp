@@ -4,6 +4,7 @@ import { fontFamily, fontSize, gray1, gray2, gray5 } from './Styles'
 
 import React from 'react'
 import UserIcon from './Icon'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
