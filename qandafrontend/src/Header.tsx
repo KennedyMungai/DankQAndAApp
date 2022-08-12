@@ -35,7 +35,7 @@ const Header = () => {
                 text-decoration: none;
             `}>Q & A</Link>
 
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     name="" 
