@@ -6,6 +6,10 @@ import UserIcon from './Icon'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
+type FormData = {
+    search: string;
+};
+
 const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
