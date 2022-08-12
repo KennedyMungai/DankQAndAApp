@@ -14,6 +14,11 @@ const Header = () => {
         searchState(e.currentTarget.value);
     };
 
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log(search);
+    };
+
     return (
         <div css={css`
             position: fixed;
