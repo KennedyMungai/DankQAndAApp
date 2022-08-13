@@ -10,8 +10,9 @@ import {
     FieldTextArea, 
     FormButtonContainer, 
     PrimaryButton,
-    FieldError } from './Styles'
-
+    FieldError, 
+    SubmissionSuccess} from './Styles'
+    
 type FormData = {
   title: string;
   content: string;
