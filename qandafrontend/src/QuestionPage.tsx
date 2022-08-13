@@ -101,7 +101,7 @@ const QuestionPage = () => {
                         css`
                             margin-top: 20px;
                         `
-                    }>
+                    } onSubmit={handleSubmit(submitForm)}>
                         <FieldSet>
                             <FieldContainer>
                                 <FieldLabel htmlFor='content'>
