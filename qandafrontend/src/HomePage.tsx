@@ -7,6 +7,7 @@ import PageTitle from './PageTitle'
 import QuestionList from './QuestionList'
 import { getUnansweredQuestions, QuestionData } from './QuestionsData'
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
