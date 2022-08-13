@@ -65,6 +65,7 @@ const QuestionPage = () => {
         const doGetQuestion = async (questionId: number) => {
             dispatch(gettingQuestionAction());
             const foundQuestion = await getQuestion(questionId);
+            dispatch(gotQuestionAction(foundQuestion));
         }
     
         if (questionId) {
