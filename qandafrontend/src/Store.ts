@@ -86,7 +86,11 @@ const questionsReducer = (state = initialQuestionState, action: QuestionsActions
             }
         }
         case GOTUNANSWEREDQUESTIONS:{
-
+            return {
+                ...state,
+                unanswered: action.questions,
+                loading: false
+            }
         }
         case GETTINGQUESTION:{
 
