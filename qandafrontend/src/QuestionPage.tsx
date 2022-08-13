@@ -113,7 +113,11 @@ const QuestionPage = () => {
                             margin-top: 20px;
                         `
                     } onSubmit={handleSubmit(submitForm)}>
-                        <FieldSet>
+                        <FieldSet
+                            disabled={
+                                formState.isSubmitting || successfullySubmitted
+                            }
+                        >
                             <FieldContainer>
                                 <FieldLabel htmlFor='content'>
                                     Your Answer
