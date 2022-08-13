@@ -15,7 +15,7 @@ import {
         } from './Store';
 
 const HomePage = () => {
-  const [questions, setQuestions] = useState<QuestionData[]>([]);
+  // const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [questionsLoading, setQuestionsLoading] = useState(true);
   const dispatch = useDispatch();
 
