@@ -30,6 +30,7 @@ const HomePage = () => {
     const doGetUnansweredQuestions =async () => {
       dispatch(gettingUnansweredQuestionsAction());
       const unansweredQuestions = await getUnansweredQuestions();
+      dispatch(gotUnansweredQuestionsAction(unansweredQuestions));
       setQuestions(unansweredQuestions);
       setQuestionsLoading(false);
     };
