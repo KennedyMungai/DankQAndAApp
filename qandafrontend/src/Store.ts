@@ -23,7 +23,7 @@ export const GETTINGUNANSWEREDQUESTIONS = 'GettingUnansweredQuestions';
 export const gettingUnansweredQuestionsAction = () => (
     {
         type: GETTINGUNANSWEREDQUESTIONS,
-     } as const
+    } as const
 );
 
 export const GOTUNANSWEREDQUESTIONS = 'GotUnansweredQuestions';
