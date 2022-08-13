@@ -14,7 +14,6 @@ import {
 import { 
         getQuestion, 
         PostAnswer, 
-        QuestionData 
     } from './QuestionsData'
 import { 
         gray3, 
