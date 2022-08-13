@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { Page } from './Page'
 import QuestionList from './QuestionList'
-import { searchQuestions, QuestionData } from './QuestionsData'
+import { searchQuestions } from './QuestionsData'
 import { 
           AppState,
           searchingQuestionsAction,
