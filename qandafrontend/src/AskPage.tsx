@@ -44,7 +44,9 @@ const AskPage = () => {
   return (
     <Page title='Ask A Question'>
       <form onSubmit={handleSubmit(submitForm)}>
-        <FieldSet>
+        <FieldSet disabled={
+          formState.isSubmitting || successfullySubmitted
+        }>
           <FieldContainer>
             <FieldLabel htmlFor='title'>
               Title
