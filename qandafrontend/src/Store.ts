@@ -44,3 +44,10 @@ export const gettingQuestionAction = () => (
 );
 
 export const GOTQUESTION = 'GotQuestion';
+
+export const gotQuestionAction = (question: QuestionData | null) => (
+    {
+        type: GOTQUESTION,
+        question: question
+    } as const
+);
