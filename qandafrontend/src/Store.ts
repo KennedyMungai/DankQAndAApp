@@ -25,3 +25,5 @@ export const gettingUnansweredQuestionsAction = () => (
         type: GETTINGUNANSWEREDQUESTIONS,
      } as const
 );
+
+export const GOTUNANSWEREDQUESTIONS = 'GotUnansweredQuestions';
