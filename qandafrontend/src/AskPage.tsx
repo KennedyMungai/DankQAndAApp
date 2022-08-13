@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { Page } from './Page'
 import { postQuestion } from './QuestionsData';
@@ -12,7 +12,7 @@ import {
     PrimaryButton,
     FieldError, 
     SubmissionSuccess} from './Styles'
-    
+
 type FormData = {
   title: string;
   content: string;
@@ -22,6 +22,8 @@ const AskPage = () => {
   const { register, errors } = useForm<FormData>({
     mode: 'onBlur'
   });
+
+  const [successfullySubmitted, setSuccessfullySubmitted] = useState(false)
 
   return (
     <Page title='Ask A Question'>
