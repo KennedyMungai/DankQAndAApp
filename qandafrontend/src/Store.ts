@@ -59,3 +59,6 @@ export const searchingQuestionsAction = () => (
         type: SEARCHINGQUESTIONS,
     } as const
 );
+
+export const SEARCHEDQUESTIONS = 'SearchedQuestions';
+
