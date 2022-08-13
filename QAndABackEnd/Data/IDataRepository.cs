@@ -1,3 +1,5 @@
+using QAndABackEnd.Data.Models;
+
 namespace QAndABackEnd.Data;
 
 public interface IDataRepository
