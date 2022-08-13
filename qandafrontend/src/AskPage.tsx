@@ -30,7 +30,16 @@ const AskPage = () => {
     mode: 'onBlur'
   });
 
-  
+  const submitForm = async (data: FormData) => {
+    const result = await postQuestion({
+      title: data.title,
+      content: data.content,
+      userName: "Fred",
+      created: new Date()
+    });
+
+    setSuccessfullySubmitted(result ? true : false);
+  }
 
   return (
     <Page title='Ask A Question'>
