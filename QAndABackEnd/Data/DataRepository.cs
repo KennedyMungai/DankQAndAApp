@@ -1,3 +1,6 @@
+using Microsoft.Data.SqlClient;
+using Dapper;
+
 namespace QAndABackEnd.Data;
 
 public class DataRepository : IDataRepository
