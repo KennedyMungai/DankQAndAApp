@@ -68,3 +68,15 @@ export const searchedQuestionsAction = ( questions: QuestionData[] ) => (
         questions
     } as const
 );
+
+type QuestionsActions = 
+    | ReturnType<typeof gettingUnansweredQuestionsAction>
+    | ReturnType<typeof gotUnansweredQuestionsAction>
+    | ReturnType<typeof gettingQuestionAction>
+    | ReturnType<typeof gotQuestionAction>
+    | ReturnType<typeof searchingQuestionsAction>
+    | ReturnType<typeof searchedQuestionsAction>;
+
+const questionsReducer = (state = initialQuestionState, action: QuestionsActions) => {
+    // TODO Handle the different actions and return a new state
+}
