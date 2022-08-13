@@ -80,7 +80,10 @@ type QuestionsActions =
 const questionsReducer = (state = initialQuestionState, action: QuestionsActions) => {
     switch (action.type) {
         case GETTINGUNANSWEREDQUESTIONS:{
-
+            return {
+                ...state,
+                loading: true
+            }
         }
         case GOTUNANSWEREDQUESTIONS:{
 
