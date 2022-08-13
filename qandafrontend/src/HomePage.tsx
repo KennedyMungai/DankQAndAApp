@@ -27,15 +27,14 @@ const HomePage = () => {
   );
 
   useEffect(() => {
-    const doGetUnansweredQuestions =async () => {
+    const doGetUnansweredQuestions = async () => {
       dispatch(gettingUnansweredQuestionsAction());
       const unansweredQuestions = await getUnansweredQuestions();
       dispatch(gotUnansweredQuestionsAction(unansweredQuestions));
     };
     
     doGetUnansweredQuestions();
-
-    // eslint-disable-next-line react hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const navigate = useNavigate();
