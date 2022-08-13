@@ -19,7 +19,8 @@ import {
         FieldTextArea, 
         FormButtonContainer, 
         PrimaryButton ,
-        FieldError
+        FieldError,
+        SubmissionSuccess
     } from './Styles'
 
 type FormData = {
@@ -155,6 +156,15 @@ const QuestionPage = () => {
                                     Submit Your Answer
                                 </PrimaryButton>
                             </FormButtonContainer>
+
+                            {
+                                successfullySubmitted && (
+                                    <SubmissionSuccess>
+                                        Your answer was successfully submitted
+                                    </SubmissionSuccess>
+                                )
+                            }
+
                         </FieldSet>
                     </form>
                 </>
