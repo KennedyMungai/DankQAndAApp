@@ -14,6 +14,7 @@ import {
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
+  const dispatch = useDispatch();
 
   const search = searchParams.get('criteria') || "";
 
