@@ -2,6 +2,13 @@ namespace QAndABackEnd.Data;
 
 public class DataRepository : IDataRepository
 {
+    private readonly string _connectionString;
+
+    public DataRepository(IConfiguration configuration)
+    {
+        _connectionString = configuration["ConnectionStrings:DefaultConnection"];
+    }
+
     public AnswerGetResponse GetAnswer(int answerId)
     {
         throw new NotImplementedException();
