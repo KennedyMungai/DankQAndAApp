@@ -19,6 +19,8 @@ type FormData = {
 };
 
 const AskPage = () => {
+  const [successfullySubmitted, setSuccessfullySubmitted] = useState(false)
+
   const { 
           register, 
           errors,
@@ -28,7 +30,7 @@ const AskPage = () => {
     mode: 'onBlur'
   });
 
-  const [successfullySubmitted, setSuccessfullySubmitted] = useState(false)
+  
 
   return (
     <Page title='Ask A Question'>
