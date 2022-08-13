@@ -14,7 +14,6 @@ import {
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
-  const [questions, setQuestions] = useState<QuestionData[]>([]);
 
   const search = searchParams.get('criteria') || "";
 
