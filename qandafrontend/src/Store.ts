@@ -51,3 +51,5 @@ export const gotQuestionAction = (question: QuestionData | null) => (
         question: question
     } as const
 );
+
+export const SEARCHINGQUESTIONS = 'SearchingQuestions';
