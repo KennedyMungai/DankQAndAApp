@@ -64,7 +64,6 @@ const QuestionPage = () => {
     useEffect(() => {
         const doGetQuestion = async (questionId: number) => {
             const foundQuestion = await getQuestion(questionId);
-            setQuestion(foundQuestion);
         }
     
         if (questionId) {
