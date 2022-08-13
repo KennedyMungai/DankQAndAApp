@@ -114,7 +114,11 @@ const questionsReducer = (state = initialQuestionState, action: QuestionsActions
             }
         }
         case SEARCHEDQUESTIONS:{
-
+            return {
+                ...state,
+                searched: action.questions,
+                loading: false
+            }
         }
     }
 
