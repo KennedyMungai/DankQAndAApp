@@ -62,3 +62,9 @@ export const searchingQuestionsAction = () => (
 
 export const SEARCHEDQUESTIONS = 'SearchedQuestions';
 
+export const searchedQuestionsAction = ( questions: QuestionData[] ) => (
+    {
+        type: SEARCHEDQUESTIONS,
+        questions
+    } as const
+);
