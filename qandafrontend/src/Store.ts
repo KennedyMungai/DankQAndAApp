@@ -10,3 +10,10 @@ interface QuestionsState {
 export interface AppState {
     readonly questions: QuestionsState;
 }
+
+const initialQuestionState: QuestionsState = {
+    loading: false,
+    unanswered: [],
+    viewing: null,
+    searched: []
+};
