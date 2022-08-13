@@ -39,6 +39,26 @@ const AskPage = () => {
                 minLength: 10
               })}
             />
+
+              {
+                errors.title && 
+                  errors.title.type === 'required' && (
+                    <FieldError>
+                      You must enter the question title
+                    </FieldError>
+                  )
+              }
+
+              {
+                errors.title && 
+                  errors.title.type === 
+                    'minLength' && (
+                      <FieldError>
+                        The title must be at leadst 10 characters
+                      </FieldError>
+                    )
+              }
+
           </FieldContainer>
           <FieldContainer>
             <FieldLabel htmlFor='content'>
