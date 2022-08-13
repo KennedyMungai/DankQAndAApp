@@ -40,6 +40,17 @@ const QuestionPage = () => {
 
     const [successfullySubmitted, setSuccessfullySubmitted] = useState(false);
 
+    const submitForm = async (data: FormData) => {
+        const result = await PostAnswer({
+            questionId: question!.questionId,
+            content: data.content,
+            userName: "Fred",
+            created: new Date()
+        });
+
+        setSuccessfullySubmitted(result ? true : false);
+    };
+
     useEffect(() => {
       const doGetQuestion = async (questionId: number) => {
         const foundQuestion = await getQuestion(questionId);
