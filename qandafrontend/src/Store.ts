@@ -27,3 +27,10 @@ export const gettingUnansweredQuestionsAction = () => (
 );
 
 export const GOTUNANSWEREDQUESTIONS = 'GotUnansweredQuestions';
+
+export const gotUnansweredQuestionsAction = (questions: QuestionData[]) => (
+    {
+        type: GOTUNANSWEREDQUESTIONS,
+        questions: questions
+    } as const
+);
