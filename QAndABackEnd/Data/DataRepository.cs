@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Dapper;
+using QAndABackEnd.Data.Models;
 
 namespace QAndABackEnd.Data;
 
