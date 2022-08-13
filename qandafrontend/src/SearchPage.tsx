@@ -29,6 +29,7 @@ const SearchPage = () => {
     };
 
     doSearch(search)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search])
   
 
