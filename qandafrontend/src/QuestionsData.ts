@@ -93,3 +93,10 @@ const questions: QuestionData[] = [
     questions.push(newQuestion);
     return newQuestion;
   };
+
+  export interface PostAnswerData {
+    questionId: number;
+    content: string;
+    userName: string;
+    created: Date;
+  }
