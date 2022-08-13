@@ -63,6 +63,7 @@ const QuestionPage = () => {
 
     useEffect(() => {
         const doGetQuestion = async (questionId: number) => {
+            dispatch(gettingQuestionAction());
             const foundQuestion = await getQuestion(questionId);
         }
     
