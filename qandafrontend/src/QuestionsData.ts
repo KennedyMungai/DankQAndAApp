@@ -72,3 +72,10 @@ const questions: QuestionData[] = [
             q.content.toLowerCase().indexOf(criteria.toLowerCase()) >= 0
     );
   };
+
+  export interface PostQuestionData {
+    title: string;
+    content: string;
+    userName: string;
+    created: Date;
+  }
