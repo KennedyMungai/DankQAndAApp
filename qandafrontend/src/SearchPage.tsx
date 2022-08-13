@@ -25,6 +25,7 @@ const SearchPage = () => {
     const doSearch = async (criteria: string) => {
       dispatch(searchingQuestionsAction());
       const foundResults = await searchQuestions(criteria);
+      dispatch(searchedQuestionsAction(foundResults));
     };
 
     doSearch(search)
