@@ -19,7 +19,11 @@ type FormData = {
 };
 
 const AskPage = () => {
-  const { register, errors } = useForm<FormData>({
+  const { 
+          register, 
+          errors,
+          handleSubmit  
+        } = useForm<FormData>({
     mode: 'onBlur'
   });
 
