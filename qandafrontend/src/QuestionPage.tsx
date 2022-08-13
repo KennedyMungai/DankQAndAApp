@@ -47,6 +47,10 @@ const QuestionPage = () => {
     const [successfullySubmitted, setSuccessfullySubmitted] = useState(false);
     const dispatch = useDispatch();
 
+    const question = useSelector(
+        (state: AppState) => state.questions.viewing
+    );
+
     const submitForm = async (data: FormData) => {
         const result = await PostAnswer({
             questionId: question!.questionId,
