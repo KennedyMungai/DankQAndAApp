@@ -25,7 +25,9 @@ type FormData = {
 const QuestionPage = () => {
     const [question, setQuestion] = useState<QuestionData | null>(null)
     const { questionId } = useParams();
-    const { register, errors } = useForm<FormData>();
+    const { register, errors } = useForm<FormData>({
+        mode: 'onBlur'
+    });
 
     useEffect(() => {
       const doGetQuestion = async (questionId: number) => {
