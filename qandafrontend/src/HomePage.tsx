@@ -28,6 +28,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const doGetUnansweredQuestions =async () => {
+      dispatch(gettingUnansweredQuestionsAction());
       const unansweredQuestions = await getUnansweredQuestions();
       setQuestions(unansweredQuestions);
       setQuestionsLoading(false);
