@@ -10,6 +10,11 @@ import {
     PrimaryButton } from './Styles'
 
 
+type FormData = {
+  title: string;
+  content: string;
+};
+
 const AskPage = () => {
   return (
     <Page title='Ask A Question'>{null}</Page>
