@@ -24,10 +24,7 @@ public class DataRepository : IDataRepository
 
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
     {
-        using var connection = new SqlConnection(_connectionString)
-        {
-
-        };
+        using var connection = new SqlConnection(_connectionString);
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search)
