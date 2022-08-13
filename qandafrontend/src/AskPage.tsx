@@ -8,7 +8,8 @@ import {
     FieldInput, 
     FieldTextArea, 
     FormButtonContainer, 
-    PrimaryButton } from './Styles'
+    PrimaryButton,
+    FieldError } from './Styles'
 
 
 type FormData = {
