@@ -10,8 +10,8 @@ import NotFoundPage from './NotFoundPage';
 import QuestionPage from './QuestionPage';
 import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
+import { configureStore } from './Store';
 import { fontFamily, fontSize, gray2 } from './Styles'
-
 
 const AskPage = React.lazy(() => import('./AskPage'));
 
