@@ -13,7 +13,8 @@ import {
         FieldLabel, 
         FieldTextArea, 
         FormButtonContainer, 
-        PrimaryButton } from './Styles'
+        PrimaryButton 
+    } from './Styles'
 
 const QuestionPage = () => {
     const [question, setQuestion] = useState<QuestionData | null>(null)
