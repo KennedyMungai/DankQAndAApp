@@ -19,3 +19,9 @@ const initialQuestionState: QuestionsState = {
 };
 
 export const GETTINGUNANSWEREDQUESTIONS = 'GettingUnansweredQuestions';
+
+export const gettingUnansweredQuestionsAction = () => (
+    {
+        type: GETTINGUNANSWEREDQUESTIONS,
+     } as const
+);
