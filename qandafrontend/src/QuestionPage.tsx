@@ -104,6 +104,25 @@ const QuestionPage = () => {
                                         minLength: 50
                                     })}
                                     />
+
+                                    {
+                                        errors.content && 
+                                            errors.content.type === 'required' && (
+                                                <FieldError>
+                                                    You muest enter the answer
+                                                </FieldError>
+                                            )
+                                    }
+
+                                    {
+                                        errors.content && 
+                                            errors.content.type === 'minLength' && (
+                                                <FieldError>
+                                                    The answer must be at least 50 characters
+                                                </FieldError>
+                                            )
+                                    }
+
                             </FieldContainer>
                             <FormButtonContainer>
                                 <PrimaryButton type='submit'>
