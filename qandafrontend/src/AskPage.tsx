@@ -18,7 +18,9 @@ type FormData = {
 };
 
 const AskPage = () => {
-  const { register, errors } = useForm<FormData>();
+  const { register, errors } = useForm<FormData>({
+    mode: 'onBlur'
+  });
 
   return (
     <Page title='Ask A Question'>
