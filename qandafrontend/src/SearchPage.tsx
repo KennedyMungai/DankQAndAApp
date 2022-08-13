@@ -6,6 +6,11 @@ import { useSearchParams } from 'react-router-dom'
 import { Page } from './Page'
 import QuestionList from './QuestionList'
 import { searchQuestions, QuestionData } from './QuestionsData'
+import { 
+          AppState,
+          searchingQuestionsAction,
+          searchedQuestionsAction
+        } from './Store';
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
