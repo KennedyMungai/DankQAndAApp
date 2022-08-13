@@ -34,7 +34,10 @@ const AskPage = () => {
               id='title'
               name='title'
               type="text"
-              ref={register}
+              ref={register({
+                required: true,
+                minLength: 10
+              })}
             />
           </FieldContainer>
           <FieldContainer>
