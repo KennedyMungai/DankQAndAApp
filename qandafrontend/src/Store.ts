@@ -36,3 +36,9 @@ export const gotUnansweredQuestionsAction = (questions: QuestionData[]) => (
 );
 
 export const GETTINGQUESTION = 'GettingQuestion';
+
+export const gettingQuestionAction = () => (
+    {
+        type: GETTINGQUESTION,
+    } as const
+)
