@@ -22,7 +22,8 @@ const AskPage = () => {
   const { 
           register, 
           errors,
-          handleSubmit  
+          handleSubmit ,
+          formState 
         } = useForm<FormData>({
     mode: 'onBlur'
   });
