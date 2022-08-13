@@ -42,7 +42,11 @@ public class DataRepository : IDataRepository
 
     public IEnumerable<QuestionGetManyResponse> GetUnansweredQuestions()
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        return connection.Query<QuestionGetManyResponse>(
+            @"EXEC dbo.Question_GetUnanswered"
+        );
     }
 
     public bool QuestionExists(int questionId)
