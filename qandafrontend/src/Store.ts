@@ -41,4 +41,6 @@ export const gettingQuestionAction = () => (
     {
         type: GETTINGQUESTION,
     } as const
-)
+);
+
+export const GOTQUESTION = 'GotQuestion';
