@@ -2,9 +2,11 @@
 import { css } from '@emotion/react'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import AnswerList from './AnswerList'
 import { Page } from './Page'
+
 import { 
         getQuestion, 
         PostAnswer, 
