@@ -32,7 +32,9 @@ public class DataRepository : IDataRepository
 
     public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search)
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        return connection.Query<QuestionGetManyResponse>(@"EXEC dbo.Question_GetMany_BySearch");
     }
 
     public IEnumerable<QuestionGetManyResponse> GetUnansweredQuestions()
