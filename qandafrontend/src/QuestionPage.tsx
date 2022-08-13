@@ -14,7 +14,8 @@ import {
         FieldLabel, 
         FieldTextArea, 
         FormButtonContainer, 
-        PrimaryButton 
+        PrimaryButton ,
+        FieldError
     } from './Styles'
 
 type FormData = {
