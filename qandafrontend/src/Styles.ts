@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled'
+import { gettingUnansweredQuestionsAction, gotUnansweredQuestionsAction, gettingQuestionAction, gotQuestionAction, searchingQuestionsAction, searchedQuestionsAction } from './Store';
 
 export const gray1 = '#383737';
 export const gray2 = '#5c5a5a';
@@ -110,3 +111,11 @@ export const SubmissionFailure = styled.div`
 export const FieldInput = styled.input`
     ${baseFieldCSS}
 `;
+
+type QuestionsActions = 
+    | ReturnType<typeof gettingUnansweredQuestionsAction>
+    | ReturnType<typeof gotUnansweredQuestionsAction>
+    | ReturnType<typeof gettingQuestionAction>
+    | ReturnType<typeof gotQuestionAction>
+    | ReturnType<typeof searchingQuestionsAction>
+    | ReturnType<typeof searchedQuestionsAction>;
