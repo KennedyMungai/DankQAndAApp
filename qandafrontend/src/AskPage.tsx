@@ -34,6 +34,16 @@ const AskPage = () => {
               ref={register}
             />
           </FieldContainer>
+          <FieldContainer>
+            <FieldLabel htmlFor='content'>
+              Content
+            </FieldLabel>
+            <FieldTextArea 
+              id='content'
+              name='content'
+              ref={register}
+            />
+          </FieldContainer>
         </FieldSet>
       </form>
     </Page>
