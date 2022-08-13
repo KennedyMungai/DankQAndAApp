@@ -31,8 +31,6 @@ const HomePage = () => {
       dispatch(gettingUnansweredQuestionsAction());
       const unansweredQuestions = await getUnansweredQuestions();
       dispatch(gotUnansweredQuestionsAction(unansweredQuestions));
-      setQuestions(unansweredQuestions);
-      setQuestionsLoading(false);
     };
     
     doGetUnansweredQuestions();
