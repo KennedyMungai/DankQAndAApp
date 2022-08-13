@@ -15,6 +15,8 @@ import { fontFamily, fontSize, gray2 } from './Styles'
 
 const AskPage = React.lazy(() => import('./AskPage'));
 
+const store = configureStore();
+
 function App() {
   return (
     <BrowserRouter>
