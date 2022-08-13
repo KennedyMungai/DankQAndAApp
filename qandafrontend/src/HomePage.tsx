@@ -17,6 +17,7 @@ import {
 const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [questionsLoading, setQuestionsLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const doGetUnansweredQuestions =async () => {
