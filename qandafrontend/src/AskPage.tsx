@@ -32,7 +32,7 @@ const AskPage = () => {
 
   return (
     <Page title='Ask A Question'>
-      <form>
+      <form onSubmit={handleSubmit(submitForm)}>
         <FieldSet>
           <FieldContainer>
             <FieldLabel htmlFor='title'>
