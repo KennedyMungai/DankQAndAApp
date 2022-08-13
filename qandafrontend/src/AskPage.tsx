@@ -18,7 +18,7 @@ type FormData = {
 };
 
 const AskPage = () => {
-  const { register } = useForm<FormData>();
+  const { register, errors } = useForm<FormData>();
 
   return (
     <Page title='Ask A Question'>
