@@ -93,7 +93,11 @@ const questionsReducer = (state = initialQuestionState, action: QuestionsActions
             }
         }
         case GETTINGQUESTION:{
-
+            return {
+                ...state,
+                viewing: null,
+                loading: true
+            }
         }
         case GOTQUESTION:{
 
