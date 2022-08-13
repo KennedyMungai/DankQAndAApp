@@ -13,7 +13,7 @@ type FormData = {
 const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
-    const { register } = useForm<FormData>();
+    const { register, handleSubmit } = useForm<FormData>();
     const navigate = useNavigate();
 
     // const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
