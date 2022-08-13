@@ -71,6 +71,8 @@ const QuestionPage = () => {
         if (questionId) {
             doGetQuestion(Number(questionId));
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [questionId])
 
     return (
