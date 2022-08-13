@@ -72,6 +72,26 @@ const AskPage = () => {
                 minLength: 50
               })}
             />
+
+            {
+              errors.content &&  
+                errors.content.type === 'required' && (
+                  <FieldError>
+                    You must enter the queston content
+                  </FieldError>
+                )
+            }
+
+            {
+              errors.content && 
+                errors.content.type === 
+                  'minLength' && (
+                    <FieldError>
+                      The content must be at least 50 characters in length
+                    </FieldError>
+                  )
+            }
+
           </FieldContainer>
           <FormButtonContainer>
             <PrimaryButton type='submit'>
