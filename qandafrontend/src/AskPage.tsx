@@ -23,6 +23,17 @@ const AskPage = () => {
     <Page title='Ask A Question'>
       <form>
         <FieldSet>
+          <FieldContainer>
+            <FieldLabel htmlFor='title'>
+              Title
+            </FieldLabel>
+            <FieldInput
+              id='title'
+              name='title'
+              type="text"
+              ref={register}
+            />
+          </FieldContainer>
         </FieldSet>
       </form>
     </Page>
