@@ -20,8 +20,8 @@ const Header = () => {
     //     searchState(e.currentTarget.value);
     // };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const submitForm = ({ search }: FormData) => {
+        navigate(`search?criteria=${search}`);
     };
 
     return (
