@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import React, { Suspense } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import AskPage from './AskPage';
 import Header from './Header';
@@ -10,6 +11,7 @@ import QuestionPage from './QuestionPage';
 import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
 import { fontFamily, fontSize, gray2 } from './Styles'
+
 
 const AskPage = React.lazy(() => import('./AskPage'));
 
