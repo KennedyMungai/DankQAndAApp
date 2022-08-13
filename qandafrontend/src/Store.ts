@@ -100,7 +100,11 @@ const questionsReducer = (state = initialQuestionState, action: QuestionsActions
             }
         }
         case GOTQUESTION:{
-
+            return {
+                ...state,
+                viewing: action.question,
+                loading: false
+            }
         }
         case SEARCHINGQUESTIONS:{
 
