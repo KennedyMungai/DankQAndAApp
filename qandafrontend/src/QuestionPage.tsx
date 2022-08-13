@@ -82,6 +82,30 @@ const QuestionPage = () => {
                         }
                     </div>
                     <AnswerList data={question.answers} />
+
+                    <form css={
+                        css`
+                            margin-top: 20px;
+                        `
+                    }>
+                        <FieldSet>
+                            <FieldContainer>
+                                <FieldLabel htmlFor='content'>
+                                    Your Answer
+                                </FieldLabel>
+                                <FieldTextArea
+                                    id='content'
+                                    name='content'
+                                    ref={register}
+                                    />
+                            </FieldContainer>
+                            <FormButtonContainer>
+                                <PrimaryButton type='submit'>
+                                    Submit Your Answer
+                                </PrimaryButton>
+                            </FormButtonContainer>
+                        </FieldSet>
+                    </form>
                 </>
             )}
         </div>
