@@ -45,6 +45,7 @@ const QuestionPage = () => {
     });
 
     const [successfullySubmitted, setSuccessfullySubmitted] = useState(false);
+    const dispatch = useDispatch();
 
     const submitForm = async (data: FormData) => {
         const result = await PostAnswer({
