@@ -89,4 +89,7 @@ const questions: QuestionData[] = [
       questionId,
       answers: []
     };
+
+    questions.push(newQuestion);
+    return newQuestion;
   };
