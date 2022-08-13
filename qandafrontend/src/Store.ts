@@ -1,4 +1,5 @@
 import { QuestionData } from "./QuestionsData";
+import { Store, createStore, combineReducers  } from 'redux';
 
 interface QuestionsState {
     readonly loading: boolean;
