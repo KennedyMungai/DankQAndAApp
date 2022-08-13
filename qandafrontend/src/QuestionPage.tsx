@@ -6,7 +6,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import AnswerList from './AnswerList'
 import { Page } from './Page'
-
+import { 
+        AppState, 
+        gettingQuestionAction, 
+        gotQuestionAction 
+    } from './Store';
 import { 
         getQuestion, 
         PostAnswer, 
