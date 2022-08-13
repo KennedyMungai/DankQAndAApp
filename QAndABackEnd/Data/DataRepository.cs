@@ -28,11 +28,14 @@ public class DataRepository : IDataRepository
                             new { QuestionId = questionId }
                         );
 
-        question.Answers = connection.Query<AnswerGetResponse>(
-            @"EXEC dbo.Answer_Get_ByQuestionId 
-                @QuestionId = @QuestionId",
-                new { QuestionId = questionId }
-        );
+        if (question is not null)
+        {
+            question.Answers = connection.Query<AnswerGetResponse>(
+                @"EXEC dbo.Answer_Get_ByQuestionId 
+                    @QuestionId = @QuestionId",
+                    new { QuestionId = questionId }
+            );
+        }
 
         return question;
     }
