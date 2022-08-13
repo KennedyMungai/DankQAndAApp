@@ -24,7 +24,6 @@ const SearchPage = () => {
   useEffect(() => {
     const doSearch = async (criteria: string) => {
       const foundResults = await searchQuestions(criteria);
-      setQuestions(foundResults);
     };
 
     doSearch(search)
