@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form';
 import { Page } from './Page'
 import { 
     FieldSet, 
@@ -16,6 +17,8 @@ type FormData = {
 };
 
 const AskPage = () => {
+  const { register } = useForm<FormData>();
+
   return (
     <Page title='Ask A Question'>{null}</Page>
   )
