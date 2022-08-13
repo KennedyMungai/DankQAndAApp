@@ -33,6 +33,8 @@ const QuestionPage = () => {
         mode: 'onBlur'
     });
 
+    const [successfullySubmitted, setSuccessfullySubmitted] = useState(false);
+
     useEffect(() => {
       const doGetQuestion = async (questionId: number) => {
         const foundQuestion = await getQuestion(questionId);
