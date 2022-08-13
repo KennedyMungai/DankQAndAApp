@@ -25,6 +25,7 @@ public class DataRepository : IDataRepository
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
     {
         using var connection = new SqlConnection(_connectionString);
+        connection.Open();
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search)
