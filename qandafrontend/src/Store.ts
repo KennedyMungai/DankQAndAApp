@@ -78,5 +78,26 @@ type QuestionsActions =
     | ReturnType<typeof searchedQuestionsAction>;
 
 const questionsReducer = (state = initialQuestionState, action: QuestionsActions) => {
-    // TODO Handle the different actions and return a new state
-}
+    switch (action.type) {
+        case GETTINGUNANSWEREDQUESTIONS:{
+
+        }
+        case GOTUNANSWEREDQUESTIONS:{
+
+        }
+        case GETTINGQUESTION:{
+
+        }
+        case GOTQUESTION:{
+
+        }
+        case SEARCHINGQUESTIONS:{
+
+        }
+        case SEARCHEDQUESTIONS:{
+
+        }
+    }
+
+    return state;
+};
