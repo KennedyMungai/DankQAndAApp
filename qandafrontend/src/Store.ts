@@ -125,3 +125,7 @@ const questionsReducer = (state = initialQuestionState, action: QuestionsActions
 
     return state;
 };
+
+const rootReducer = combineReducers<AppState>({
+    questions: questionsReducer
+});
