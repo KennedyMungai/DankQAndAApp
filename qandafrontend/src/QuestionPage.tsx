@@ -17,6 +17,10 @@ import {
         PrimaryButton 
     } from './Styles'
 
+type FormData = {
+    content: string;
+};
+
 const QuestionPage = () => {
     const [question, setQuestion] = useState<QuestionData | null>(null)
     const { questionId } = useParams();
