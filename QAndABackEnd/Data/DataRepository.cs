@@ -24,7 +24,10 @@ public class DataRepository : IDataRepository
 
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString)
+        {
+
+        };
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search)
