@@ -23,6 +23,10 @@ const HomePage = () => {
     (state: AppState) => state.questions.unanswered
   );
 
+  const questionsLoading = useSelector(
+    (state: AppState) => state.questions.loading
+  );
+
   useEffect(() => {
     const doGetUnansweredQuestions =async () => {
       const unansweredQuestions = await getUnansweredQuestions();
