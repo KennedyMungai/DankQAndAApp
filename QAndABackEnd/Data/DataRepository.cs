@@ -27,6 +27,9 @@ public class DataRepository : IDataRepository
                             @"EXEC dbo.Question_GetSingle @QuestionId = @QuestionId",
                             new { QuestionId = questionId }
                         );
+
+        // TODO Get the answers for the question
+        return question;
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
