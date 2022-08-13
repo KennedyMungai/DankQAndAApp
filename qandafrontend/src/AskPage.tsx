@@ -20,7 +20,12 @@ const AskPage = () => {
   const { register } = useForm<FormData>();
 
   return (
-    <Page title='Ask A Question'>{null}</Page>
+    <Page title='Ask A Question'>
+      <form>
+        <FieldSet>
+        </FieldSet>
+      </form>
+    </Page>
   )
 }
 
