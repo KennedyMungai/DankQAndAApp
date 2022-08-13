@@ -15,6 +15,9 @@ import {
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+  const questions = useSelector(
+    (state: AppState) => state.questions.searched
+  );
 
   const search = searchParams.get('criteria') || "";
 
