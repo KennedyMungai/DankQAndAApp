@@ -111,11 +111,3 @@ export const SubmissionFailure = styled.div`
 export const FieldInput = styled.input`
     ${baseFieldCSS}
 `;
-
-type QuestionsActions = 
-    | ReturnType<typeof gettingUnansweredQuestionsAction>
-    | ReturnType<typeof gotUnansweredQuestionsAction>
-    | ReturnType<typeof gettingQuestionAction>
-    | ReturnType<typeof gotQuestionAction>
-    | ReturnType<typeof searchingQuestionsAction>
-    | ReturnType<typeof searchedQuestionsAction>;
