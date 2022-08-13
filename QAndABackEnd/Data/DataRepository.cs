@@ -28,7 +28,12 @@ public class DataRepository : IDataRepository
                             new { QuestionId = questionId }
                         );
 
-        // TODO Get the answers for the question
+        question.Answers = connection.Query<AnswerGetResponse>(
+            @"EXEC dbo.Answer_Get_ByQuestionId 
+                @QuestionId = @QuestionId",
+                new { QuestionId = questionId }
+        );
+
         return question;
     }
 
