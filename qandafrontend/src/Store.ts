@@ -17,3 +17,5 @@ const initialQuestionState: QuestionsState = {
     viewing: null,
     searched: []
 };
+
+export const GETTINGUNANSWEREDQUESTIONS = 'GettingUnansweredQuestions';
