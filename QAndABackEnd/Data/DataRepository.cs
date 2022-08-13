@@ -20,7 +20,13 @@ public class DataRepository : IDataRepository
 
     public QuestionGetSingleResponse GetQuestion(int questionId)
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        var question = connection
+                        .QueryFirstOrDefault<QuestionGetSingleResponse>(
+                            @"EXEC dbo.Question_GetSingle @QuestionId = @QuestionId",
+                            new { QuestionId = questionId }
+                        );
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
