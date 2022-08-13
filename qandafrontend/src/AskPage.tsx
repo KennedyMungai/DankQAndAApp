@@ -119,6 +119,15 @@ const AskPage = () => {
               Submit Your Question
             </PrimaryButton>
           </FormButtonContainer>
+
+            {
+              successfullySubmitted && (
+                <SubmissionSuccess>
+                  Your question was successfully submitted
+                </SubmissionSuccess>
+              )
+            }
+
         </FieldSet>
       </form>
     </Page>
