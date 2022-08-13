@@ -5,7 +5,11 @@ import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router-dom'
 import AnswerList from './AnswerList'
 import { Page } from './Page'
-import { getQuestion, PostAnswer, QuestionData } from './QuestionsData'
+import { 
+        getQuestion, 
+        PostAnswer, 
+        QuestionData 
+    } from './QuestionsData'
 import { 
         gray3, 
         gray6, 
