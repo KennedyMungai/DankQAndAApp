@@ -14,6 +14,7 @@ const Header = () => {
     const [searchParams] = useSearchParams();
     const criteria = searchParams.get('criteria') || '';
     const { register } = useForm<FormData>();
+    const navigate = useNavigate();
 
     // const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     searchState(e.currentTarget.value);
