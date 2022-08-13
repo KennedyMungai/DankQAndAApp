@@ -44,6 +44,11 @@ const AskPage = () => {
               ref={register}
             />
           </FieldContainer>
+          <FormButtonContainer>
+            <PrimaryButton type='submit'>
+              Submit Your Question
+            </PrimaryButton>
+          </FormButtonContainer>
         </FieldSet>
       </form>
     </Page>
