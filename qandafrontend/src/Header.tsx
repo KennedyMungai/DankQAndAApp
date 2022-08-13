@@ -45,7 +45,7 @@ const Header = () => {
                 text-decoration: none;
             `}>Q & A</Link>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitForm)}>
                 <input 
                     ref={register}
                     name="search"
