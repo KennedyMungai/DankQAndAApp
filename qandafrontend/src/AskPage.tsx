@@ -67,7 +67,10 @@ const AskPage = () => {
             <FieldTextArea 
               id='content'
               name='content'
-              ref={register}
+              ref={register({
+                required: true,
+                minLength: 50
+              })}
             />
           </FieldContainer>
           <FormButtonContainer>
