@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using DbUp;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 EnsureDatabase.For.SqlDatabase(connectionString);
+var upgrader = DeployChanges.To
+                    .SqlDatabase(connectionString, null)
+                    .WithScriptsEmbeddedInAssembly(System.Reflection.Assembly.GetExecutingAssembly())
+                    .WithTransaction()
+                    .Build();
 
 var app = builder.Build();
 
