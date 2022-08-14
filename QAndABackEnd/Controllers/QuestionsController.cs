@@ -85,4 +85,20 @@ public class QuestionsController : ControllerBase
 
         return savedQuestion;
     }
+
+    [HttpDelete("{questionId}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult DeleteQuestion(int questionId)
+    {
+        var question = _dataRepository.GetQuestion(questionId);
+
+        if (question is null)
+        {
+            return NotFound();
+        }
+
+        _dataRepository.DeleteQuestion(questionId);
+
+        return NoContent();
+    }
 }
