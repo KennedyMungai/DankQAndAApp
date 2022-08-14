@@ -1,6 +1,6 @@
 namespace QAndABackEnd.Data.Models;
 
-public class AnswerpostFullRequest
+public class AnswerPostFullRequest
 {
     public int QuestionId { get; set; }
     public string Content { get; set; }
