@@ -66,4 +66,23 @@ public class QuestionsController : ControllerBase
             savedQuestion
         );
     }
+
+    [HttpPut("{questionId}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<QuestionGetSingleResponse> PutQuestion(int questionId, QuestionPutRequest questionPutRequest)
+    {
+        var question = _dataRepository.GetQuestion(questionId);
+
+        if (question is null)
+        {
+            return NotFound();
+        }
+
+        questionPutRequest.Title = string.IsNullOrEmpty(questionPutRequest.Title) ? question.Title : questionPutRequest.Title;
+        questionPutRequest.Content = string.IsNullOrEmpty(questionPutRequest.Content) ? question.Content : questionPutRequest.Content;
+        
+        var savedQuestion = _dataRepository.PutQuestion(questionId, questionPutRequest);
+
+        return savedQuestion;
+    }
 }
