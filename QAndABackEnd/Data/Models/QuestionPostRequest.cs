@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace QAndABackEnd.Data.Models;
 
 public class QuestionPostRequest
 {
+    [Required]
     public string Title { get; set; }
     public string Content { get; set; }
     public string UserId { get; set; }
