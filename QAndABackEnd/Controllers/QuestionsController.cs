@@ -54,4 +54,16 @@ public class QuestionsController : ControllerBase
 
         return question;
     }
+
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
+    {
+        var savedQuestion = _dataRepository.PostQuestion(questionPostRequest);
+        return CreatedAtAction(
+            nameof(GetQuestion),
+            new { questionId = savedQuestion.QuestionId },
+            savedQuestion
+        );
+    }
 }
