@@ -42,6 +42,7 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet("{questionId}")]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<QuestionGetSingleResponse> GetQuestion(int questionId)
     {
         var question = _dataRepository.GetQuestion(questionId);
