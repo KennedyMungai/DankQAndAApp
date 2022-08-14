@@ -8,5 +8,5 @@ namespace QAndABackEnd.Controllers;
 [Route("api/[controller]")]
 public class QuestionsController : ControllerBase
 {
-    
+    private readonly IDataRepository _dataRepository;
 }
