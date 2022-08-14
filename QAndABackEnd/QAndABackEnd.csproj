@@ -13,4 +13,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="QAndABackEnd\SqlScripts\01-Tables.sql" />
+    <Resource Include="QAndABackEnd\SqlScripts\02-Sprocs.sql" />
+  </ItemGroup>
+
 </Project>
