@@ -61,7 +61,7 @@ public class DataRepository : IDataRepository
     {
         using var connection = new SqlConnection(_connectionString);
         connection.Open();
-        return connection.Query<QuestionGetManyResponse>(@"EXEC dbo.Question_GetMany");
+        return connection.Query<QuestionGetManyResponse>("EXEC dbo.Question_GetMany");
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search)
