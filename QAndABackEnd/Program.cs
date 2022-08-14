@@ -17,6 +17,11 @@ var upgrader = DeployChanges.To
                     .WithTransaction()
                     .Build();
 
+if (upgrader.IsUpgradeRequired())
+{
+    upgrader.PerformUpgrade();
+}
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
