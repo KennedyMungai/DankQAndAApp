@@ -21,4 +21,17 @@ public class QuestionsController : ControllerBase
         var questions = _dataRepository.GetQuestions();
         return questions;
     }
+
+    [HttpGet]
+    public IEnumerable<QuestionGetManyResponse> GetQuestions(string search)
+    {
+        if (search is null)
+        {
+            return _dataRepository.GetQuestions();
+        }
+        else
+        {
+            return _dataRepository.GetQuestionsBySearch(search);
+        }
+    }
 }
