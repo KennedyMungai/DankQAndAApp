@@ -101,4 +101,20 @@ public class QuestionsController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPost("answer")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
+    {
+        var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId);
+
+        if(!questionExists)
+        {
+            return NotFound();
+        }
+
+        var savedAnswer = _dataRepository.PostAnswer(answerPostRequest);
+
+        return savedAnswer;
+    }
 }
