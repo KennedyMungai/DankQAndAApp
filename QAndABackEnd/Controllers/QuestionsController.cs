@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using QAndABackEnd.Data;
+using QAndABackEnd.Data.Models;
 
 namespace QAndABackEnd.Controllers;
 
