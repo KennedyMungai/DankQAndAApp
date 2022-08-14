@@ -9,4 +9,9 @@ namespace QAndABackEnd.Controllers;
 public class QuestionsController : ControllerBase
 {
     private readonly IDataRepository _dataRepository;
+
+    public QuestionsController(IDataRepository dataRepository)
+    {
+        _dataRepository = dataRepository;
+    }
 }
