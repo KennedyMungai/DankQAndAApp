@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace QAndABackEnd.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class QuestionsController : ControllerBase
 {
     
