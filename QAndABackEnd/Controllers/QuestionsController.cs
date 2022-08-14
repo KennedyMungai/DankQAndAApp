@@ -106,7 +106,7 @@ public class QuestionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
     {
-        var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId);
+        var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId.Value);
 
         if(!questionExists)
         {
