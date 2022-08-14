@@ -40,4 +40,17 @@ public class QuestionsController : ControllerBase
     {
         return _dataRepository.GetUnansweredQuestions();
     }
+
+    [HttpGet("{questionId}")]
+    public ActionResult<QuestionGetSingleResponse> GetQuestion(int questionId)
+    {
+        var question = _dataRepository.GetQuestion(questionId);
+
+        if (question is null)
+        {
+            return NotFound();
+        }
+
+        return question;
+    }
 }
