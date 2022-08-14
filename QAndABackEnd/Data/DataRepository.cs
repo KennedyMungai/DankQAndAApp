@@ -13,6 +13,11 @@ public class DataRepository : IDataRepository
         _connectionString = configuration["ConnectionStrings:DefaultConnection"];
     }
 
+    public void DeleteQuestion(int questionId)
+    {
+        throw new NotImplementedException();
+    }
+
     public AnswerGetResponse GetAnswer(int answerId)
     {
         using var connection = new SqlConnection(_connectionString);
@@ -70,6 +75,21 @@ public class DataRepository : IDataRepository
         return connection.Query<QuestionGetManyResponse>(
             @"EXEC dbo.Question_GetUnanswered"
         );
+    }
+
+    public AnswerGetResponse PostAnswer(AnswerPostRequest answer)
+    {
+        throw new NotImplementedException();
+    }
+
+    public QuestionGetSingleResponse PostQuestion(QuestionPostRequest question)
+    {
+        throw new NotImplementedException();
+    }
+
+    public QuestionGetSingleResponse PutQuestion(int questionId, QuestionPutRequest question)
+    {
+        throw new NotImplementedException();
     }
 
     public bool QuestionExists(int questionId)
