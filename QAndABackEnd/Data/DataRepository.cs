@@ -85,7 +85,17 @@ public class DataRepository : IDataRepository
 
     public AnswerGetResponse PostAnswer(AnswerPostRequest answer)
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        return connection.QueryFirst<AnswerGetResponse>(
+            @"EXEC dbo.Answer_Post
+            @QuestionId = @QuestionId,
+            @Content = @Content,
+            @UserId = @UserId,
+            @UserName = @UserName,
+            @Created = @Created",
+            answer
+        );
     }
 
     public QuestionGetSingleResponse PostQuestion(QuestionPostRequest question)
