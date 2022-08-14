@@ -57,7 +57,7 @@ public class QuestionsController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
+    public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostFullRequest questionPostRequest)
     {
         var savedQuestion = _dataRepository.PostQuestion(questionPostRequest);
         return CreatedAtAction(
