@@ -15,7 +15,13 @@ public class DataRepository : IDataRepository
 
     public void DeleteQuestion(int questionId)
     {
-        throw new NotImplementedException();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        connection.Execute(
+            @"EXEC dbo.Question_Delete
+            @QuestionId = @QuestionId",
+            new {QuestionId = questionId}
+        );
     }
 
     public AnswerGetResponse GetAnswer(int answerId)
