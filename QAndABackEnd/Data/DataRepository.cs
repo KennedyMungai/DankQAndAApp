@@ -74,6 +74,11 @@ public class DataRepository : IDataRepository
                             );
     }
 
+    public IEnumerable<QuestionGetManyResponse> GetQuestionsWithAnswers()
+    {
+        throw new NotImplementedException();
+    }
+
     public IEnumerable<QuestionGetManyResponse> GetUnansweredQuestions()
     {
         using var connection = new SqlConnection(_connectionString);
