@@ -58,11 +58,18 @@ public class QuestionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<QuestionGetSingleResponse> GetQuestion(int questionId)
     {
-        var question = _dataRepository.GetQuestion(questionId);
+        var question = _cache.Get(questionId);
 
         if (question is null)
         {
-            return NotFound();
+            question = _dataRepository.GetQuestion(questionId);
+
+            if(question is null)
+            {
+                return NotFound();
+            }
+
+            _cache.Set(question);
         }
 
         return question;
