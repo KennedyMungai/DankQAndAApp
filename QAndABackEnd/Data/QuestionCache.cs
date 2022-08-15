@@ -1,21 +1,42 @@
+using Microsoft.Extensions.Caching.Memory;
 using QAndABackEnd.Data.Models;
 
 namespace QAndABackEnd.Data;
 
 public class QuestionCache : IQuestionCache
 {
+    public MemoryCache _cache { get; set; }
+
+    public QuestionCache()
+    {
+        _cache = new MemoryCache(new MemoryCacheOptions
+            {
+                SizeLimit = 100
+            }
+        );
+    }
+
+    private string GetCacheKey(int questionId) => $"Question - {questionId}";
+
     public QuestionGetSingleResponse Get(int questionId)
     {
-        throw new NotImplementedException();
+        QuestionGetSingleResponse question;
+        _cache.TryGetValue(GetCacheKey(questionId), out question);
+        return question;
     }
 
     public void Remove(int questionId)
     {
-        throw new NotImplementedException();
+        _cache.Remove(GetCacheKey(questionId));
     }
 
     public void Set(QuestionGetSingleResponse question)
     {
-        throw new NotImplementedException();
+        var cacheEntryOptions = new MemoryCacheEntryOptions().SetSize(1);
+        _cache.Set(
+            GetCacheKey(question.QuestionId),
+            question,
+            cacheEntryOptions
+        );
     }
 }
