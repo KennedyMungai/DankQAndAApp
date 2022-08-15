@@ -23,7 +23,7 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<QuestionGetManyResponse> GetQuestions(string search, bool includeAnswers)
+    public IEnumerable<QuestionGetManyResponse> GetQuestions(string search, bool includeAnswers, int page =1 , int pageSize = 20)
     {
         if (search is null)
         {
