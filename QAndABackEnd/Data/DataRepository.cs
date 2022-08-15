@@ -79,6 +79,29 @@ public class DataRepository : IDataRepository
                             );
     }
 
+    public IEnumerable<QuestionGetManyResponse> GetQuestionsBySearchingWithPaging(string search, int pageNumber, int pageSize)
+    {
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+
+        var parameters = new 
+                            {
+                                Search = search,
+                                PageNumber = pageNumber,
+                                PageSize = pageSize
+                            };
+
+        return connection.Query<QuestionGetManyResponse>
+        (
+            @"EXEC dbo.Question_GetMany_BySearch_WithPaging
+            @Search = @Search,
+            @PageNumver = @PageNumber,
+            @PageSize = @PageSize",
+
+            parameters
+        );
+    }
+
     public IEnumerable<QuestionGetManyResponse> GetQuestionsWithAnswers()
     {
         using var connection = new SqlConnection(_connectionString);
