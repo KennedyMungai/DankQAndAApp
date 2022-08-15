@@ -131,6 +131,8 @@ public class QuestionsController : ControllerBase
 
         _dataRepository.DeleteQuestion(questionId);
 
+        _cache.Remove(questionId);
+
         return NoContent();
     }
 
