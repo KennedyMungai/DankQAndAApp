@@ -158,6 +158,8 @@ public class QuestionsController : ControllerBase
             }
         );
 
+        _cache.Remove(answerPostRequest.QuestionId.Value);
+
         return savedAnswer;
     }
 }
