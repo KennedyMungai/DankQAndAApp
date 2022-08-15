@@ -40,22 +40,26 @@ public class DataRepository : IDataRepository
     {
         using var connection = new SqlConnection(_connectionString);
         connection.Open();
-        var question = connection
-                        .QueryFirstOrDefault<QuestionGetSingleResponse>(
-                            @"EXEC dbo.Question_GetSingle @QuestionId = @QuestionId",
-                            new { QuestionId = questionId }
-                        );
 
-        if (question is not null)
+        using GridReader results = connection.QueryMultiple(
+            @"EXEC dbo.Question_GetSingle
+            @QuestionId = @QuestionId;
+            EXEC dbo.Answer_Get_ByQuestionId
+            @QuestionId = @QuestionId",
+            new { QuestionId = questionId }
+        );
         {
-            question.Answers = connection.Query<AnswerGetResponse>(
-                @"EXEC dbo.Answer_Get_ByQuestionId 
-                    @QuestionId = @QuestionId",
-                    new { QuestionId = questionId }
-            );
-        }
+            var question = results.Read<QuestionGetSingleResponse>()
+                            .FirstOrDefault();
 
-        return question;
+            if (question != null)
+            {
+                question.Answers = results.Read<AnswerGetResponse>()
+                                            .ToList();
+            }
+
+            return question;
+        }
     }
 
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
