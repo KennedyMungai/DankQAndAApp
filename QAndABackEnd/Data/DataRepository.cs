@@ -79,18 +79,9 @@ public class DataRepository : IDataRepository
         using var connection = new SqlConnection(_connectionString);
         connection.Open();
 
-        var questions = connection.Query<QuestionGetManyResponse>(@"EXEC dbo.Answer_Get_ByQuestionId");
-
-        foreach (var question in questions)
-        {
-            question.Answers = connection.Query<AnswerGetResponse>(
-                @"EXEC dbp.Answer_Get_ByQuestionId
-                @QuestionId = @QuestionId",
-                new { QuestionId = question.QuestionId }
-            ).ToList();
-        }
-
-        return questions;
+        return connection.Query<QuestionGetManyResponse>(
+            "EXEC dbo.Question_GetMany_WithAnswers"
+        );
     }
 
     public IEnumerable<QuestionGetManyResponse> GetUnansweredQuestions()
