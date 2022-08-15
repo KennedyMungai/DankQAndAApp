@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IQuestionCache, QuestionCache>();
 builder.Services.AddScoped<IDataRepository, DataRepository>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 EnsureDatabase.For.SqlDatabase(connectionString);
