@@ -9,9 +9,11 @@ namespace QAndABackEnd.Controllers;
 public class QuestionsController : ControllerBase
 {
     private readonly IDataRepository _dataRepository;
+    private readonly IQuestionCache questionCache;
 
-    public QuestionsController(IDataRepository dataRepository)
+    public QuestionsController(IDataRepository dataRepository, IQuestionCache questionCache)
     {
+            this.questionCache = questionCache;
         _dataRepository = dataRepository;
     }
 
