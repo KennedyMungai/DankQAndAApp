@@ -38,7 +38,11 @@ public class QuestionsController : ControllerBase
         }
         else
         {
-            return _dataRepository.GetQuestionsBySearch(search);
+            return _dataRepository.GetQuestionsBySearchingWithPaging(
+                search,
+                page,
+                pageSize
+            );
         }
     }
 
