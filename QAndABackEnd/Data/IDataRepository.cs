@@ -8,6 +8,7 @@ public interface IDataRepository
     IEnumerable<QuestionGetManyResponse> GetQuestionsWithAnswers();
     IEnumerable<QuestionGetManyResponse> GetQuestionsBySearch(string search);
     IEnumerable<QuestionGetManyResponse> GetUnansweredQuestions();
+    Task<IEnumerable<QuestionGetManyResponse>> GetUnansweredQuestionsAsync();
     IEnumerable<QuestionGetManyResponse> GetQuestionsBySearchingWithPaging(string search, int pageNumber, int pageSize);
     QuestionGetSingleResponse GetQuestion(int questionId);
     bool QuestionExists(int questionId);
