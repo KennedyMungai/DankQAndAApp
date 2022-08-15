@@ -113,6 +113,8 @@ public class QuestionsController : ControllerBase
         
         var savedQuestion = _dataRepository.PutQuestion(questionId, questionPutRequest);
 
+        _cache.Remove(savedQuestion.QuestionId);
+
         return savedQuestion;
     }
 
