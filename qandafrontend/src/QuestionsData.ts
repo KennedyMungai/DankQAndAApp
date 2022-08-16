@@ -108,17 +108,23 @@ const questions: QuestionData[] = [
   }
 
   export const postQuestion = async (question: PostQuestionData): Promise<QuestionData | undefined> => {
-    await wait(500);
+    const accessToken = await getAccessToken();
+    const result = await http<QuestionDataFromServer, PostQuestionData>({
+      path: '/questions',
+      method: 'post',
+      body: question,
+      accessToken
+    });
 
-    const questionId = Math.max(...questions.map(q => q.questionId)) + 1;
-    const newQuestion: QuestionData = {
-      ...question,
-      questionId,
-      answers: []
-    };
-
-    questions.push(newQuestion);
-    return newQuestion;
+    if (result.ok && result.body) {
+      return mapQuestionFromServer(
+        result.body
+      )
+    }
+    else
+    {
+      return undefined;
+    }
   };
 
   export interface PostAnswerData {
