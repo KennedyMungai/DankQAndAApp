@@ -16,10 +16,18 @@ public class QuestionsController : ControllerBase
 {
     private readonly IDataRepository _dataRepository;
     private readonly IQuestionCache _cache;
+    private readonly IHttpClientFactory clientFactory;
+    private readonly IConfiguration configuration;
 
-    public QuestionsController(IDataRepository dataRepository, IQuestionCache questionCache)
+    public QuestionsController(
+            IDataRepository dataRepository, 
+            IQuestionCache questionCache,
+            IHttpClientFactory clientFactory,
+            IConfiguration configuration)
     {
         _cache = questionCache;
+        this.clientFactory = clientFactory;
+        this.configuration = configuration;
         _dataRepository = dataRepository;
     }
 
