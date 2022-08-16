@@ -27,6 +27,7 @@ import {
         FieldError,
         SubmissionSuccess
     } from './Styles'
+import { useAuth } from './Auth'
 
 type FormData = {
     content: string;
