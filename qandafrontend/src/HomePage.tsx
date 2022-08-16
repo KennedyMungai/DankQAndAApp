@@ -16,7 +16,6 @@ import {
 import { useAuth } from './Auth';
 
 const HomePage = () => {
-  // const [questionsLoading, setQuestionsLoading] = useState(true);
   const dispatch = useDispatch();
 
   const questions = useSelector(
