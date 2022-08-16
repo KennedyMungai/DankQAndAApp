@@ -200,7 +200,7 @@ public class QuestionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
+    public async ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
     {
         var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId.Value);
 
@@ -214,8 +214,8 @@ public class QuestionsController : ControllerBase
             {
                 QuestionId = answerPostRequest.QuestionId.Value,
                 Content = answerPostRequest.Content,
-                UserId = "1",
-                UserName = "example@email.com",
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
+                UserName = await GetUserName(),
                 Created=DateTime.UtcNow
             }
         );
