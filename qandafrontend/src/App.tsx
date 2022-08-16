@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './Auth';
+import AuthorizedPage from './AuthorizedPage';
 // import AskPage from './AskPage';
 import Header from './Header';
 import HomePage from './HomePage';
@@ -11,7 +12,7 @@ import NotFoundPage from './NotFoundPage';
 import QuestionPage from './QuestionPage';
 import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
-import { SignOutPage } from './SignOutPage';
+import  SignOutPage  from './SignOutPage';
 import { configureStore } from './Store';
 import { fontFamily, fontSize, gray2 } from './Styles'
 
