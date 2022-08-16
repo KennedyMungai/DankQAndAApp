@@ -10,9 +10,18 @@ interface Props {
 }
 
 const SignInPage = ( {action}: Props ) => {
+  const {signIn} = useAuth();
+
+  if(action === 'signin')
+  {
+    signIn();
+  }
+
   return (
-    <Page title='Sign In'>{null}</Page>
-  )
+    <Page title='Sign In'>
+      <StatusText>Sign in ...</StatusText>
+    </Page>
+  );
 }
 
 export default SignInPage
