@@ -15,6 +15,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
+builder.Services.AddAuthorization(options => 
+    {
+        options.AddPolicy("MustBeQuestionAuthor", policy => policy.Requirements.Add(new MustBeQuestionAuthor()))
+    }
+);
 builder.Services.AddSingleton<IQuestionCache, QuestionCache>();
 builder.Services.AddScoped<IDataRepository, DataRepository>();
 builder.Services.AddAuthentication(options =>
