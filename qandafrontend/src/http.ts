@@ -23,4 +23,10 @@ export const http = async <RESB, REQB = undefined>(config: HttpRequest<REQB>) : 
         logError(request, response);
         return { ok: Response.ok };
     }
+
+    console.error(
+        `Error requesting ${request.method}
+        ${request.url}`,
+        body,
+    );
 };
