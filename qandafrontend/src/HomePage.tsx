@@ -13,6 +13,7 @@ import {
           gotUnansweredQuestionsAction, 
           AppState 
         } from './Store';
+import { useAuth } from './Auth';
 
 const HomePage = () => {
   // const [questionsLoading, setQuestionsLoading] = useState(true);
