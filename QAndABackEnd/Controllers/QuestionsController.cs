@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using QAndABackEnd.Data;
 using QAndABackEnd.Data.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http;
+using System.Text.Json;
 
 namespace QAndABackEnd.Controllers;
 
