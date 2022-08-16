@@ -16,6 +16,7 @@ const Header = () => {
     const criteria = searchParams.get('criteria') || '';
     const { register, handleSubmit } = useForm<FormData>();
     const navigate = useNavigate();
+    const {isAuthenticated, user, loading} = useAuth();
 
     // const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     searchState(e.currentTarget.value);
