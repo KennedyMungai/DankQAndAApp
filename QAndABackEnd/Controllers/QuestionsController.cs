@@ -200,7 +200,7 @@ public class QuestionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
+    public async Task<ActionResult<AnswerGetResponse>> PostAnswer(AnswerPostRequest answerPostRequest)
     {
         var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId.Value);
 
