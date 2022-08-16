@@ -1,5 +1,6 @@
 using System.Security.AccessControl;
 using DbUp;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using QAndABackEnd.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IQuestionCache, QuestionCache>();
 builder.Services.AddScoped<IDataRepository, DataRepository>();
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }
+).AddJwtBearer(options => 
+    {
+        options.Authority = builder.Configuration["Auth0:Authority"];
+        options.Audience = builder.Configuration["Auth0:Audience"];
+    }
+)
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 EnsureDatabase.For.SqlDatabase(connectionString);
 var upgrader = DeployChanges.To
