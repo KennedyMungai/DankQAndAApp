@@ -25,5 +25,8 @@ public class MustBeQuestionAuthorHandler : AuthorizationHandler<MustBeQuestionAu
             context.Fail();
             return;
         }
+
+        var questionId = _httpContextAccessor.HttpContext.Request.RouteValues["questionId"];
+        int questionIdAsInt = Convert.ToInt32(questionId);
     }
 }
