@@ -62,7 +62,10 @@ const questions: QuestionData[] = [
 
     unansweredQuestions = await response.json();
 
-    return questions.filter(q => q.answers.length === 0);
+    return unansweredQuestions.map((question) => ({
+      ...question,
+      created: new Date(question.created)
+    }));
   };
 
   export const getQuestion = async (questionId: number): Promise<QuestionData | null> => {
