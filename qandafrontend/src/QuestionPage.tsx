@@ -47,6 +47,8 @@ const QuestionPage = () => {
     const [successfullySubmitted, setSuccessfullySubmitted] = useState(false);
     const dispatch = useDispatch();
 
+    const {isAuthenticated} = useAuth();
+
     const question = useSelector(
         (state: AppState) => state.questions.viewing
     );
