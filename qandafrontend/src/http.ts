@@ -24,6 +24,13 @@ export const http = async <RESB, REQB = undefined>(config: HttpRequest<REQB>) : 
         }
     );
 
+    if (config.accessToken) {
+        request.headers.set(
+            'authorization',
+            'bearer ${config.accessToken}'
+        );
+    }
+
     if (response.ok) {
         const body = await response.json();
         return { ok: Response.ok, body };
