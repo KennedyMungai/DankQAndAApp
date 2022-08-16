@@ -97,7 +97,7 @@ public class QuestionsController : ControllerBase
             {
                 Title = questionPostRequest.Title,
                 Content = questionPostRequest.Content,
-                UserId = "1",
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
                 UserName = "example@email.com",
                 Created = DateTime.Now
             }
