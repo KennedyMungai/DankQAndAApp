@@ -71,7 +71,9 @@ const questions: QuestionData[] = [
   };
 
   export const getQuestion = async (questionId: number): Promise<QuestionData | null> => {
-    
+    const result = await http<QuestionDataFromServer>({
+      path: `/questions/${questionId}`
+    });
   };
 
   export const searchQuestions = async (criteria: string): Promise<QuestionData[]> => {
