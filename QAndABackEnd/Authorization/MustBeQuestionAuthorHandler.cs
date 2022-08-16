@@ -18,8 +18,8 @@ public class MustBeQuestionAuthorHandler : AuthorizationHandler<MustBeQuestionAu
         _httpContextAccessor = httpContextAccessor;
     }
 
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, MustBeQuestionAuthorRequirement requirement)
+    protected async override Task HandleRequirementAsync(AuthorizationHandlerContext context, MustBeQuestionAuthorRequirement requirement)
     {
-        throw new NotImplementedException();
+        
     }
 }
