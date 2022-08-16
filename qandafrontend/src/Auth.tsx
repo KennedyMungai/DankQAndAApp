@@ -36,6 +36,12 @@ export const AuthProvider: React.FC = ( {children}: any ) => {
         setLoading(true);
         const auth0FromHook = await createAuth0Client(authSettings);
         setAuth0Client(auth0FromHook);
+
+        if(window.location.pathname === './signin-callback' && window.location.search.indexOf('code=') > -1)
+        {
+            await auth0FromHook.handleRedirectCallback();
+            window.location.replace(window.location.origin);
+        }
         
         const isAuthenticatedFromHook = await auth0FromHook.isAuthenticated();
 
