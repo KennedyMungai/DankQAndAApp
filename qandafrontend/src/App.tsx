@@ -10,6 +10,7 @@ import NotFoundPage from './NotFoundPage';
 import QuestionPage from './QuestionPage';
 import SearchPage from './SearchPage';
 import SignInPage from './SignInPage';
+import { SignOutPage } from './SignOutPage';
 import { configureStore } from './Store';
 import { fontFamily, fontSize, gray2 } from './Styles'
 
@@ -48,7 +49,7 @@ function App() {
               </Suspense>
             } />
 
-            <Route path="signin" element={<SignInPage/>} />
+            <Route path="signin" element={<SignInPage action="signin" />} />
             <Route path="*" element={<NotFoundPage/>} />
             <Route path="questions/:questionId" element={<QuestionPage />} />
           </Routes>
