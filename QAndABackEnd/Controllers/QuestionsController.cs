@@ -76,6 +76,7 @@ public class QuestionsController : ControllerBase
         return question;
     }
 
+    [Authorize]
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
@@ -98,6 +99,7 @@ public class QuestionsController : ControllerBase
         );
     }
 
+    [Authorize]
     [HttpPut("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<QuestionGetSingleResponse> PutQuestion(int questionId, QuestionPutRequest questionPutRequest)
@@ -119,6 +121,7 @@ public class QuestionsController : ControllerBase
         return savedQuestion;
     }
 
+    [Authorize]
     [HttpDelete("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult DeleteQuestion(int questionId)
@@ -137,6 +140,7 @@ public class QuestionsController : ControllerBase
         return NoContent();
     }
 
+    [Authorize]
     [HttpPost("answer")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
