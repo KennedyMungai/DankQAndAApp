@@ -72,7 +72,7 @@ const Header = () => {
                     />
             </form>
 
-            <Link 
+            {/* <Link 
                 to="signin"
                 css={
                     css`
@@ -96,7 +96,28 @@ const Header = () => {
                 >
                 <UserIcon />
                 <span>Sign In</span>
-            </Link>
+            </Link> */}
+
+            <div>
+                {!loading && 
+                    (isAuthenticated ? (
+                        <div>
+                            <span>{user!.name}</span>
+                            <Link to="/signout" css={buttonStyle} >
+                                <UserIcon />
+                                <span>Sign out</span>
+                            </Link>
+                        </div>
+                    ) : (
+                        <Link to="/signin" css={buttonStyle}>
+                            <UserIcon />
+                            <span>Sign In</span>
+                        </Link>
+                    )
+                    
+                    )
+                }
+            </div>
         </div>
     )
 }
