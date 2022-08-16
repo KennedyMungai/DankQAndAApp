@@ -57,7 +57,9 @@ const HomePage = () => {
         }
       >
         <PageTitle>Unanswered Questions</PageTitle>
-        <PrimaryButton onClick={handleAskQuestionClick} >Ask A Question</PrimaryButton>
+        {
+          isAuthenticated && (<PrimaryButton onClick={handleAskQuestionClick} >Ask A Question</PrimaryButton>)
+        }
       </div>
 
       {questionsLoading ? (
