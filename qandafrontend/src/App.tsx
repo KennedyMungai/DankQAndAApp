@@ -50,6 +50,7 @@ function App() {
             } />
 
             <Route path="signin" element={<SignInPage action="signin" />} />
+            <Route path='/signin-callback' element={<SignInPage action="signin-callback" />} />
             <Route path="*" element={<NotFoundPage/>} />
             <Route path="questions/:questionId" element={<QuestionPage />} />
           </Routes>
