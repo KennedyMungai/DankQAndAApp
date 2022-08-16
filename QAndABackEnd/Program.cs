@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(options =>
         options.Authority = builder.Configuration["Auth0:Authority"];
         options.Audience = builder.Configuration["Auth0:Audience"];
     }
-)
+);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 EnsureDatabase.For.SqlDatabase(connectionString);
