@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './Auth';
 // import AskPage from './AskPage';
 import Header from './Header';
 import HomePage from './HomePage';
