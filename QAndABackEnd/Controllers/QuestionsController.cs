@@ -130,7 +130,7 @@ public class QuestionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
+    public async Task<ActionResult<QuestionGetSingleResponse>> PostQuestionAsync(QuestionPostRequest questionPostRequest)
     {
         var savedQuestion = _dataRepository.PostQuestion(
             new QuestionPostFullRequest
@@ -138,7 +138,7 @@ public class QuestionsController : ControllerBase
                 Title = questionPostRequest.Title,
                 Content = questionPostRequest.Content,
                 UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
-                UserName = "example@email.com",
+                UserName = await GetUserName(),
                 Created = DateTime.Now
             }
         );
