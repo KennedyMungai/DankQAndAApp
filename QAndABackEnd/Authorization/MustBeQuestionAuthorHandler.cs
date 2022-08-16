@@ -39,5 +39,13 @@ public class MustBeQuestionAuthorHandler : AuthorizationHandler<MustBeQuestionAu
             context.Succeed(requirement);
             return;
         }
+
+        if (question.UserId != userId)
+        {
+            context.Fail();
+            return;
+        }
+
+        context.Succeed(requirement);
     }
 }
