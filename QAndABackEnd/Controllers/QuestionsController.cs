@@ -16,8 +16,8 @@ public class QuestionsController : ControllerBase
 {
     private readonly IDataRepository _dataRepository;
     private readonly IQuestionCache _cache;
-    private readonly IHttpClientFactory clientFactory;
-    private readonly IConfiguration configuration;
+    private readonly IHttpClientFactory _clientFactory;
+    private readonly string _auth0UserInfo;
 
     public QuestionsController(
             IDataRepository dataRepository, 
@@ -26,7 +26,7 @@ public class QuestionsController : ControllerBase
             IConfiguration configuration)
     {
         _cache = questionCache;
-        this.clientFactory = clientFactory;
+        _clientFactory = clientFactory;
         this.configuration = configuration;
         _dataRepository = dataRepository;
     }
