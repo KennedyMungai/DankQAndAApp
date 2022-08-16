@@ -18,6 +18,8 @@ import { useAuth } from './Auth';
 const HomePage = () => {
   const dispatch = useDispatch();
 
+  const { isAuthenticated } = useAuth();
+
   const questions = useSelector(
     (state: AppState) => state.questions.unanswered
   );
