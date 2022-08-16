@@ -82,3 +82,10 @@ export const AuthProvider: React.FC = ( {children}: any ) => {
         </Auth0Context.Provider>
     );
 };
+
+export const getAccessToken = async () => {
+    const auth0FromHook = await createAuth0Client(authSettings);
+    const accessToken = await auth0FromHook.getTokenSilently();
+
+    return accessToken;
+};
