@@ -1,3 +1,4 @@
+import { getAccessToken } from './Auth';
 import { http } from './http';
 
 export interface QuestionData {
