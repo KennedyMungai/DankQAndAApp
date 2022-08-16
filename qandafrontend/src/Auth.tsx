@@ -30,4 +30,19 @@ export const AuthProvider: React.FC = ( children ) => {
     const [user, setUser] = useState<Auth0User | undefined>(undefined);
     const [auth0Client, setAuth0Client] = useState<Auth0Client>()
     const [loading, setLoading] = useState<boolean>(true)
+
+    return (
+        <Auth0Context.Provider value={{
+            isAuthenticated, 
+            user, 
+            signIn: () => getAuth0ClientFromState().loginWithRedirect(),
+            signOut: () => getAuth0ClientFromState().logout({
+                client_id: authSettings.client_id,
+                returnTo: window.location.origin + '/signout-callback'
+            }),
+            loading
+        }}>
+            {children}
+        </Auth0Context.Provider>
+    );
 };
