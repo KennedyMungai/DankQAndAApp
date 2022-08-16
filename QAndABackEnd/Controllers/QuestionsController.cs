@@ -81,7 +81,7 @@ public class QuestionsController : ControllerBase
         return question;
     }
 
-    [Authorize]
+    [Authorize(Policy = "MustBeQuestionAuthor")]
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -106,7 +106,7 @@ public class QuestionsController : ControllerBase
         );
     }
 
-    [Authorize]
+    [Authorize(Policy = "MustBeQuestionAuthor")]
     [HttpPut("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -130,7 +130,7 @@ public class QuestionsController : ControllerBase
         return savedQuestion;
     }
 
-    [Authorize]
+    [Authorize(Policy = "MustBeQuestionAuthor")]
     [HttpDelete("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -151,7 +151,7 @@ public class QuestionsController : ControllerBase
         return NoContent();
     }
 
-    [Authorize]
+    [Authorize(Policy = "MustBeQuestionAuthor")]
     [HttpPost("answer")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
