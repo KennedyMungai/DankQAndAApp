@@ -2,6 +2,9 @@ using System.Security.AccessControl;
 using DbUp;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using QAndABackEnd.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
+using QAndABackEnd.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
