@@ -79,6 +79,7 @@ public class QuestionsController : ControllerBase
     [Authorize]
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
     {
         var savedQuestion = _dataRepository.PostQuestion(
@@ -102,6 +103,7 @@ public class QuestionsController : ControllerBase
     [Authorize]
     [HttpPut("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<QuestionGetSingleResponse> PutQuestion(int questionId, QuestionPutRequest questionPutRequest)
     {
         var question = _dataRepository.GetQuestion(questionId);
@@ -124,6 +126,7 @@ public class QuestionsController : ControllerBase
     [Authorize]
     [HttpDelete("{questionId}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult DeleteQuestion(int questionId)
     {
         var question = _dataRepository.GetQuestion(questionId);
@@ -143,6 +146,7 @@ public class QuestionsController : ControllerBase
     [Authorize]
     [HttpPost("answer")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<AnswerGetResponse> PostAnswer(AnswerPostRequest answerPostRequest)
     {
         var questionExists = _dataRepository.QuestionExists(answerPostRequest.QuestionId.Value);
