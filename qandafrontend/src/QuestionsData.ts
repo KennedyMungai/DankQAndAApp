@@ -135,15 +135,19 @@ const questions: QuestionData[] = [
   }
 
   export const PostAnswer = async ( answer: PostAnswerData ): Promise<AnswerData | undefined> => {
-    await wait(500);
+    const accessToken = await getAccessToken();
+    const result = await http<AnswerData, PostAnswerData>({
+      path: '/questions/answer',
+      method: 'post',
+      body: answer,
+      accessToken
+    });
 
-    const question = questions.filter( q => q.questionId === answer.questionId )[0];
-
-    const answerInQuestion: AnswerData = {
-      answerId: 99,
-      ...answer
-    };
-
-    question.answers.push(answerInQuestion);
-    return answerInQuestion;
+    if (result.ok) {
+      return result.body;
+    }
+    else
+    {
+      return undefined;
+    }
   };
