@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace QAndABackEnd.Controllers;
 
 [ApiController]
+[AllowAnonymous]
 [Route("api/[controller]")]
 public class QuestionsController : ControllerBase
 {
