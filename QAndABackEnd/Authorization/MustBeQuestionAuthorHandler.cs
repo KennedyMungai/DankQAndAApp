@@ -20,6 +20,10 @@ public class MustBeQuestionAuthorHandler : AuthorizationHandler<MustBeQuestionAu
 
     protected async override Task HandleRequirementAsync(AuthorizationHandlerContext context, MustBeQuestionAuthorRequirement requirement)
     {
-        
+        if (!context.User.Identity.IsAuthenticated)
+        {
+            context.Fail();
+            return;
+        }
     }
 }
