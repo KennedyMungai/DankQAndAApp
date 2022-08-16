@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import UserIcon from './Icon'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { useAuth } from './Auth'
 
 type FormData = {
     search: string;
