@@ -48,7 +48,9 @@ function App() {
                       Loading...
                     </div>
                   }>
-                    <AskPage />
+                    <AuthorizedPage>
+                      <AskPage />
+                    </AuthorizedPage>
                   </Suspense>
                 } />
     
