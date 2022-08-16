@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 import Auth0Client from "@auth0/auth0-spa-js/dist/typings/Auth0Client";
 import { authSettings } from './AppSettings';
@@ -16,9 +16,11 @@ interface IAuth0Context {
     loading: boolean;
 }
 
-export const Auth0Context = React.createContext<IAuth0Context>({
+export const Auth0Context = createContext<IAuth0Context>({
     isAuthenticated: false,
     signIn: () => {},
     signOut: () => {},
     loading: true
 });
+
+export const useAuth = () => useContext(Auth0Context);
