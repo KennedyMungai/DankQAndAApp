@@ -9,7 +9,7 @@ interface Props {
   action: SigninAction;
 }
 
-const SignInPage = () => {
+const SignInPage = ( {action}: Props ) => {
   return (
     <Page title='Sign In'>{null}</Page>
   )
