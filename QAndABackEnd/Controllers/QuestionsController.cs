@@ -27,8 +27,8 @@ public class QuestionsController : ControllerBase
     {
         _cache = questionCache;
         _clientFactory = clientFactory;
-        this.configuration = configuration;
         _dataRepository = dataRepository;
+        _auth0UserInfo = $"{configuration["Auth0:Authority"]}userInfo";
     }
 
     [HttpGet]
