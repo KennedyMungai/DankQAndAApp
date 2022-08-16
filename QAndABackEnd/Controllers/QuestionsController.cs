@@ -20,6 +20,7 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public IEnumerable<QuestionGetManyResponse> GetQuestions()
     {
         var questions = _dataRepository.GetQuestions();
@@ -27,6 +28,7 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public IEnumerable<QuestionGetManyResponse> GetQuestions(string search, bool includeAnswers, int page =1 , int pageSize = 20)
     {
         if (search is null)
@@ -51,12 +53,14 @@ public class QuestionsController : ControllerBase
     }
 
     [HttpGet("unanswered")]
+    [AllowAnonymous]
     public async Task<IEnumerable<QuestionGetManyResponse>> GetUnansweredQuestions()
     {
         return await _dataRepository.GetUnansweredQuestionsAsync();
     }
 
     [HttpGet("{questionId}")]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult<QuestionGetSingleResponse> GetQuestion(int questionId)
     {
