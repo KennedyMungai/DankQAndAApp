@@ -25,7 +25,7 @@ export const Auth0Context = createContext<IAuth0Context>({
 
 export const useAuth = () => useContext(Auth0Context);
 
-export const AuthProvider: React.FC = ({ children, }) => {
+export const AuthProvider: React.FC = ( children ) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     const [user, setUser] = useState<Auth0User | undefined>(undefined);
     const [auth0Client, setAuth0Client] = useState<Auth0Client>()
