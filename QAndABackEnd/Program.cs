@@ -21,6 +21,14 @@ builder.Services.AddAuthorization(options =>
     }
 );
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddCors(options => 
+    options.AddPolicy("CorsPolicy", builder => 
+        builder
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins(Configuration["Frontend"])
+    )
+);
 builder.Services.AddScoped<IAuthorizationHandler, MustBeQuestionAuthorHandler>();
 builder.Services.AddSingleton<IQuestionCache, QuestionCache>();
 builder.Services.AddScoped<IDataRepository, DataRepository>();
@@ -59,6 +67,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 
