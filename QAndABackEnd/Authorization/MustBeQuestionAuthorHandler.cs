@@ -30,5 +30,14 @@ public class MustBeQuestionAuthorHandler : AuthorizationHandler<MustBeQuestionAu
         int questionIdAsInt = Convert.ToInt32(questionId);
 
         var userId = context.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+        var question = await _dataRepository.GetQuestion(questionIdAsInt);
+
+        if (question is null)
+        {
+            // Let it through so the controller can return a 404
+            context.Succeed(requirement);
+            return;
+        }
     }
 }
