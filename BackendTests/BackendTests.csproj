@@ -22,7 +22,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="../QAndABackend/QAndaBackend.csproj" />
+    <ProjectReference Include="../QAndABackEnd/QAndABackEnd.csproj" />
   </ItemGroup>
 
 </Project>
