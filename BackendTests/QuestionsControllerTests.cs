@@ -135,4 +135,14 @@ public class QuestionsControllerTests
         var actionResult = Assert.IsType<ActionResult<QuestionGetSingleResponse>>(result);
         Assert.IsType<NotFoundResult>(actionResult.Result);
     }
+
+    [Fact]
+    public async void GetQuestion_WhenQuestionIsFound_ReturnsQuestion()
+    {
+        // Given
+    
+        // When
+    
+        // Then
+    }
 }
