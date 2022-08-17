@@ -60,10 +60,43 @@ public class QuestionsControllerTests
     public async void GetQuestions_WhenHaveSearchParameter_ReturnsCorrectQuestions()
     {
         // Given
-
+        var mockQuestions = new List<QuestionGetManyResponse>();
+        mockQuestions.Add(
+            new QuestionGetManyResponse{
+                QuestionId = 1,
+                Title = "test",
+                Content = "Test content",
+                UserName = "User1",
+                Answers = new List<AnswerGetResponse>()
+            }
+        );
 
         // When
-    
+        var mockDataRepository = new Mock<IDataRepository>();
+        mockDataRepository
+            .Setup(repo => repo.GetQuestionsBySearchingWithPaging("Test", 1, 20))
+            .Returns(() => Task.FromResult(mockQuestions.AsEnumerable()));
+
+        var mockConfigurationRoot = new Mock<IConfigurationRoot>();
+        mockConfigurationRoot.SetupGet(
+            config => config[It.IsAny<string>()].Returns("Some settings")
+        );
+
+        var questionsController = new QuestionsController(
+            mockDataRepository.Object,
+            null,
+            null,
+            mockConfigurationRoot.Object
+        );
+
+        var result = await questionsController.GetQuestions("Test", false);
+
         // Then
+        Assert.Single(result);
+        mockDataRepository.Verify(
+            mock => mock.GetQuestionsBySearchingWithPaging("Test", 1, 20),
+            Times.Once()
+        );
+
     }
 }
