@@ -55,4 +55,15 @@ public class QuestionsControllerTests
         );
 
     }
+
+    [Fact]
+    public async void GetQuestions_WhenHaveSearchParameter_ReturnsCorrectQuestions()
+    {
+        // Given
+
+
+        // When
+    
+        // Then
+    }
 }
