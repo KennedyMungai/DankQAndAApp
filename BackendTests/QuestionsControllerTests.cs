@@ -46,6 +46,13 @@ public class QuestionsControllerTests
             mockConfigurationRoot.Object
         );
 
+        var result = await questionsController.GetQuestions(null, false);
         // Then
+        Assert.Equal(10, result.Count());
+        mockDataRepository.Verify(
+            mock => mock.GetQuestions(),
+            Times.Once()
+        );
+
     }
 }
