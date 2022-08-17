@@ -28,8 +28,24 @@ public class QuestionsControllerTests
                 Answers=new List<AnswerGetResponse>()
             });
         }
+
         // When
-        
+        var mockDataRepository = new Mock<IDataRepository>();
+        mockDataRepository
+            .Setup(repo => repo.GetQuestions())
+            .Returns(() => Task.FromResult(mockQuestions.AsEnumerable()));
+        var mockConfigurationRoot = new Mock<IConfigurationRoot>();
+        mockConfigurationRoot.SetupGet(
+            config => config[It.IsAny<string>()]
+        ).Returns("Some setting");
+
+        var questionsController = new QuestionsController(
+            mockDataRepository.Object,
+            null,
+            null,
+            mockConfigurationRoot.Object
+        );
+
         // Then
     }
 }
