@@ -5,6 +5,30 @@ import HomePage from './HomePage';
 
 afterEach(cleanup);
 
+jest.mock('./QuestionsData', () => ({
+       getUnansweredQuestions: () => {
+           return Promise.resolve([
+               {
+                   questionId: 1,
+                   title: 'Title1 test',
+                   content: 'Content2 test',
+                   userName: 'User1',
+                   created: new Date(2019, 1, 1),
+                   answers: []
+               },
+               {
+                   questionId: 2,
+                   title: 'Title2 test',
+                   content: 'Content2 test',
+                   userName: 'User2',
+                   created: new Date(2019, 1, 1),
+                   answers: []
+               }
+           ])
+       }
+   })
+);
+
 test('When HomePage first rendered, loading indicator should show', async () => { 
     const { findByText } = render (
         <BrowserRouter>
@@ -26,5 +50,3 @@ test('When HomePage data returned, it should render questions', async () => {
     expect(await findByText('Title1 test')).toBeInTheDocument();
     expect(await findByText('Title2 test')).toBeInTheDocument();
  });
-
- 
