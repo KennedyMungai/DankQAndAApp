@@ -140,9 +140,39 @@ public class QuestionsControllerTests
     public async void GetQuestion_WhenQuestionIsFound_ReturnsQuestion()
     {
         // Given
-    
+        var mockQuestion = new QuestionGetSingleResponse{
+            QuestionId = 1,
+            Title = "Test"
+        };
+
+        var mockDataRepository = new Mock<IDataRepository>();
+        mockDataRepository
+                .Setup(repo => repo.GetQuestion(1))
+                .Returns(() => Task.FromResult(mockQuestion));
+
+        var mockQuestionCache = new Mock<IQuestionCache>();
+        mockQuestionCache
+                .Setup(cache => cache.Get(1))
+                .Returns(()=>mockQuestion);
+
         // When
+        var mockConfigurationRoot = new Mock<IConfigurationRoot>();
+        mockConfigurationRoot.SetupGet(config => 
+            config[It.IsAny<string>()]
+        ).Returns("Some settings");
+
+        var questionsController = new QuestionsController(
+            mockDataRepository.Object,
+            mockQuestionCache.Object,
+            null,
+            mockConfigurationRoot.Object
+        );
+
+        var result = await questionsController.GetQuestion(1);
     
         // Then
+        var actionResult = Assert.IsType<ActionResult<QuestionGetSingleResponse>>(result);
+        var questionResult = Assert.IsType<QuestionGetSingleResponse>(actionResult.Value);
+        Assert.Equal(1, questionResult.QuestionId);
     }
 }
